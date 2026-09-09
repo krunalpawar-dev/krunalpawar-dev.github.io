@@ -33,20 +33,18 @@ text('<link href="mailto:kmpawar0004@gmail.com">kmpawar0004@gmail.com</link> | +
 text('<link href="https://krunalpawar-dev.github.io/">krunalpawar-dev.github.io</link> | <link href="https://www.linkedin.com/in/krunal-pawar-dev">LinkedIn: krunal-pawar-dev</link>', 'contact')
 story.extend([Spacer(1, 15), HRFlowable(width='100%', thickness=1, color=colors.HexColor('#dce2ef'))])
 text('PROFILE', 'section')
-text('Software developer with around 3 years of professional experience building custom web applications and business management systems. Work spans backend development, user interfaces, databases, APIs and deployment, with experience in SaaS and multi-tenant applications.')
+text('Software developer with around 3 years of professional experience building custom web applications and business management systems. Work spans backend development, user interfaces, databases, APIs and deployment.')
 text('TECHNICAL SKILLS', 'section')
 text('<b>Backend &amp; data:</b> Laravel, PHP, MySQL, REST APIs, Redis and queues.')
 text('<b>Frontend:</b> Vue.js, JavaScript, jQuery, Livewire, Inertia.js, Tailwind CSS, Bootstrap and Vite.')
 text('<b>Delivery &amp; integrations:</b> Git, Linux servers, server deployment, AWS S3, payment gateways and third-party API integrations.')
 text('SELECTED PROJECT EXPERIENCE', 'section')
 projects = [
-('Bharat Medical Hall - Back Office Management', 'Order management, employee records, attendance and role-based administrative access for medical retail operations.'),
-('Treeva Healthcare Management System', 'A public-facing healthcare website and administration platform for enquiries, appointments, patient records, billing and staff.'),
-('Education Management SaaS', 'Institutional administration covering students, staff, attendance, fees and user roles, with a multi-tenant application architecture.'),
-('CRM & Business Management Platform', 'Lead and customer management, tasks, follow-ups, activity tracking and sales process functionality.'),
-('HRMS & Payroll System', 'Employee records, biometric attendance, shifts, leave, timesheets, salary templates and payslip generation.'),
-('Warehouse Management System', 'Inbound, putaway, storage, retrieval, inventory, cycle counting, barcode support and ERP/TMS integrations.'),
+('Bharat Medical Hall - Back Office & Business Management System', 'Baripada, Odisha | Full-Stack Laravel Developer. Independently developed the complete website and back-office platform: architecture, database design, backend, business logic and user interface.'),
+('Ten connected business modules', 'Orders, employee attendance, leave, payroll and salary, payslips, projects and tasks, challans, suppliers, customers and expenses. Centralizes daily operations to reduce manual work and improve administrative control.'),
 ]
+text('Additional services available: custom CRM, inventory, warehouse and SaaS applications.', 'small')
+
 for title, description in projects:
     text('<b>' + title.replace('&', '&amp;') + '</b>', 'body')
     text(description, 'small')

@@ -2,250 +2,43 @@
   "projects": [
     {
       "slug": "bharat-medical-backoffice-management-system",
-      "title": "Bharat Medical Hall",
-      "short": "Bharat Medical",
+      "title": "Bharat Medical Hall – Back Office & Business Management System",
+      "short": "Bharat Medical Hall",
       "theme": "medical",
       "icon": "grid",
-      "industry": "Healthcare / Medical retail",
-      "categories": [
-        "Laravel",
-        "Healthcare"
-      ],
-      "description": "Orders, employee details and attendance in one place for a medical retail business.",
-      "features": [
-        "Order management",
-        "Employee management",
-        "Attendance management",
-        "User management",
-        "Role-based access control",
-        "Administrative management",
-        "Operational management"
-      ],
-      "problem": "Medical retail operations involve more than fulfilling orders. Staff records, attendance and administrative responsibilities also need a consistent home. The project addressed the need to manage these internal processes from a centralized platform.",
-      "solution": "The back-office application brings order, employee and attendance management together, with role-based access to administrative functions. The structure gives the team one place to manage operational records.",
-      "contribution": "I developed the custom back-office management system described here, including order, employee, attendance and user-management functionality.",
-      "impact": "Staff can manage orders, employee records and attendance in the same system, with access based on their responsibilities.",
-      "related_services": [
-        "healthcare-management-system-development",
-        "admin-panel-development"
-      ],
-      "architecture": "Role-based operations",
-      "technologies": [
-        "Laravel",
-        "PHP",
-        "MySQL"
-      ],
-      "screenshots": [],
-      "published": true
-    },
-    {
-      "slug": "treeva-healthcare-management-system",
-      "title": "Treeva Healthcare",
-      "short": "Treeva Healthcare",
-      "theme": "treeva",
-      "icon": "grid",
-      "industry": "Healthcare",
+      "industry": "Medical retail · Baripada, Odisha",
       "categories": [
         "Laravel",
         "Healthcare",
-        "Website"
-      ],
-      "description": "A healthcare website for patient enquiries, connected to appointment, billing and staff management.",
-      "features": [
-        "Patient management",
-        "Appointment management",
-        "Enquiry management",
-        "Billing and invoices",
-        "Expense management",
-        "Service management",
-        "Staff management",
-        "Users and permissions"
-      ],
-      "problem": "The public-facing experience needed to explain healthcare services and collect patient enquiries and appointment requests. The internal team also needed a place to manage those requests alongside patient records, billing and daily operations.",
-      "solution": "The project combines a lead-focused public website with a healthcare administration platform. Enquiries and appointment requests become inputs to the operational workflow, while billing, services and staff are managed within the admin system.",
-      "contribution": "My work covered the public website and the administration functionality outlined in this case study, connecting enquiry generation with healthcare operations.",
-      "impact": "The website collects enquiries and appointment requests, while the administration system gives staff a place to manage patients, bills, services and daily work.",
-      "related_services": [
-        "healthcare-management-system-development",
-        "custom-web-application-development"
-      ],
-      "architecture": "Website + administration",
-      "technologies": [
-        "Laravel",
-        "PHP",
-        "MySQL"
-      ],
-      "screenshots": [],
-      "published": true
-    },
-    {
-      "slug": "education-management-saas",
-      "title": "Education Management SaaS",
-      "short": "Campus / SaaS",
-      "theme": "education",
-      "icon": "layers",
-      "industry": "Education",
-      "categories": [
-        "Laravel",
-        "SaaS"
-      ],
-      "description": "Student records, attendance, fees and academic administration for educational institutions.",
-      "features": [
-        "Student management",
-        "Staff management",
-        "Attendance",
-        "Fee management",
-        "Academic management",
-        "User roles",
-        "Institution administration"
-      ],
-      "problem": "Educational institutions need to coordinate student information, staff, attendance, academics and fees. A SaaS model adds the requirement to serve multiple institutions while maintaining appropriate organizational boundaries.",
-      "solution": "The platform groups institutional workflows within a SaaS application. Tenant-aware access and shared application architecture provide a foundation for adding institutions without duplicating the product for each organization.",
-      "contribution": "My contribution focused on the education-management functionality and SaaS architecture described here, covering institutional records, permissions and administrative workflows.",
-      "impact": "The platform brings student, staff, attendance and fee information together. It is designed to serve multiple institutions while keeping each organization’s records separate.",
-      "related_services": [
-        "saas-development",
-        "custom-web-application-development"
-      ],
-      "architecture": "Multi-tenant platform",
-      "technologies": [
-        "Laravel",
-        "MySQL",
-        "SaaS"
-      ],
-      "screenshots": [],
-      "published": true
-    },
-    {
-      "slug": "crm-business-management-platform",
-      "title": "CRM & Business Platform",
-      "short": "Pipeline / CRM",
-      "theme": "crm",
-      "icon": "grid",
-      "industry": "Sales / Business operations",
-      "categories": [
-        "Laravel",
-        "CRM",
-        "ERP"
-      ],
-      "description": "Customer details, sales leads, tasks and follow-ups together for the sales team.",
-      "features": [
-        "Lead management",
-        "Customer management",
-        "Task management",
-        "Follow-ups",
-        "Activity tracking",
-        "Notifications",
-        "Sales process management"
-      ],
-      "problem": "Sales teams need visibility into lead ownership, previous conversations and the next action. When those details are separated, following up consistently becomes difficult.",
-      "solution": "CRM functionality connects leads and customers with tasks, follow-ups and activity history. Sales process management gives the team a shared view of where an opportunity stands and what should happen next.",
-      "contribution": "I developed CRM functionality covering the lead, customer, activity and task workflows described in this project.",
-      "impact": "Staff can review a customer’s details, see previous activity and identify the next follow-up without assembling the record from separate tools.",
-      "related_services": [
-        "crm-development",
-        "erp-development"
-      ],
-      "architecture": "Connected sales workflows",
-      "technologies": [
-        "Laravel",
-        "PHP",
-        "MySQL"
-      ],
-      "screenshots": [
-        {
-          "src": "/assets/img/portfolio/crm/ERP1.png",
-          "alt": "Existing CRM dashboard asset showing navigation, analytics and activity overview"
-        },
-        {
-          "src": "/assets/img/portfolio/crm/ERP2.png",
-          "alt": "Existing CRM application interface"
-        }
-      ],
-      "published": true
-    },
-    {
-      "slug": "hrms-payroll-system",
-      "title": "HRMS & Payroll System",
-      "short": "People / HRMS",
-      "theme": "hrms",
-      "icon": "grid",
-      "industry": "Human resources",
-      "categories": [
-        "Laravel",
         "HRMS"
       ],
-      "description": "Employee records, attendance, leave and payroll managed through a connected staff system.",
+      "description": "A complete website and back-office platform for Bharat Medical Hall in Baripada, Odisha, bringing employee, financial and daily business operations into one place.",
       "features": [
-        "Employee management",
-        "Attendance",
-        "Biometric integration",
-        "Leave management",
-        "Comp off",
-        "Shift management",
-        "Timesheets",
-        "Payroll",
-        "Salary templates",
-        "Payslip generation",
-        "Policies",
-        "Notifications"
+        "Order Management",
+        "Employee Attendance Management",
+        "Leave Management",
+        "Payroll & Salary Management",
+        "Salary Payslip Generation",
+        "Project & Task Management",
+        "Challan Management",
+        "Supplier Management",
+        "Customer Management",
+        "Expense Management"
       ],
-      "problem": "Payroll depends on more than a total of hours worked. Shift assignments, biometric events, leave balances, comp off and policy exceptions all affect the inputs that must be reviewed.",
-      "solution": "The HRMS connects employee records, attendance, leave and timesheets with payroll preparation. Salary templates and payslip generation support a repeatable payroll workflow, while policy handling accounts for the rules that shape attendance and leave decisions.",
-      "contribution": "My development work covered the HRMS and payroll functionality listed here, including biometric attendance integration and the related employee-policy workflows.",
-      "impact": "Attendance, leave and timesheet information feed into payroll preparation, giving the team connected records to review before generating payslips.",
+      "problem": "Bharat Medical Hall needed a centralized way to manage daily operations, employees, finances and administrative work. The system was designed to reduce manual work and make business activities easier to track.",
+      "solution": "I built a connected business management platform with ten modules. Staff can manage orders, customers, suppliers and challans alongside attendance, leave, payroll, payslips, projects, tasks and expenses. An operations dashboard brings staff availability and sales orders into a consolidated view.",
+      "contribution": "As the Full-Stack Laravel Developer, I independently developed the complete website and back-office management system. My responsibilities included system architecture, database design, backend development, business logic and user interface implementation.",
+      "impact": "The system helps the organization reduce manual work, manage employees effectively and track business activities in one platform. Connected operational and financial records support better control over everyday administrative processes.",
       "related_services": [
+        "custom-web-application-development",
         "hrms-development",
-        "api-development-integration"
+        "admin-panel-development",
+        "erp-development"
       ],
-      "architecture": "Policy-driven workflows",
+      "architecture": "Centralized business management",
       "technologies": [
         "Laravel",
-        "PHP",
-        "MySQL"
-      ],
-      "screenshots": [],
-      "published": true
-    },
-    {
-      "slug": "warehouse-management-system",
-      "title": "Warehouse Management System",
-      "short": "Warehouse / WMS",
-      "theme": "warehouse",
-      "icon": "layers",
-      "industry": "Logistics / Warehousing",
-      "categories": [
-        "Laravel",
-        "Inventory",
-        "ERP",
-        "API"
-      ],
-      "description": "Track goods from arrival to storage and dispatch, with stock counts and barcode support.",
-      "features": [
-        "Inbound management",
-        "Putaway",
-        "Storage and retrieval",
-        "Warehouse management",
-        "Inventory management",
-        "Cycle counting",
-        "Barcode integration",
-        "ERP integration",
-        "TMS integration"
-      ],
-      "problem": "Warehouse operations depend on accurate location and movement information. Receiving, storing and retrieving stock must remain consistent with the inventory data used by connected ERP and transport systems.",
-      "solution": "The WMS organizes inventory through inbound, putaway, storage and retrieval workflows. Cycle counting and barcode integration support physical operations, with ERP and TMS integration connecting warehouse events to surrounding business systems.",
-      "contribution": "I developed warehouse-management functionality across the workflows and integrations described in this case study.",
-      "impact": "The system records warehouse movements and stock locations. Staff can review receiving, storage, retrieval and count information alongside connected business systems.",
-      "related_services": [
-        "warehouse-management-system-development",
-        "inventory-management-system-development",
-        "api-development-integration"
-      ],
-      "architecture": "Warehouse + integrations",
-      "technologies": [
-        "Laravel",
-        "PHP",
-        "MySQL"
+        "PHP"
       ],
       "screenshots": [],
       "published": true
@@ -814,43 +607,13 @@
       "published": true
     },
     {
-      "slug": "saas",
-      "title": "SaaS",
-      "published": true
-    },
-    {
-      "slug": "crm",
-      "title": "CRM",
-      "published": true
-    },
-    {
-      "slug": "hrms",
-      "title": "HRMS",
-      "published": true
-    },
-    {
       "slug": "healthcare",
       "title": "Healthcare",
       "published": true
     },
     {
-      "slug": "erp",
-      "title": "ERP",
-      "published": true
-    },
-    {
-      "slug": "inventory",
-      "title": "Inventory",
-      "published": true
-    },
-    {
-      "slug": "website",
-      "title": "Website",
-      "published": true
-    },
-    {
-      "slug": "api",
-      "title": "API",
+      "slug": "hrms",
+      "title": "HRMS",
       "published": true
     }
   ],

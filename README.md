@@ -1,6 +1,6 @@
 # Krunal Pawar — portfolio & project enquiries
 
-A responsive, server-rendered PHP portfolio, extending the existing static project without adding a frontend framework. It includes 7 main pages, 12 service pages, 6 case studies, 6 starter articles, a private content manager and a SQLite-backed enquiry pipeline.
+A responsive, server-rendered PHP portfolio, extending the existing static project without adding a frontend framework. It includes 7 main pages, 12 service pages, 1 confirmed case study, 6 starter articles, a private content manager and a SQLite-backed enquiry pipeline.
 
 ## Live GitHub Pages website
 
