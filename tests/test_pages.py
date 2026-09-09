@@ -30,7 +30,7 @@ class PagesTests(unittest.TestCase):
     def test_all_public_pages_and_links(self):
         sitemap = ET.parse(ROOT / 'sitemap.xml')
         urls = [el.text for el in sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-        self.assertEqual(len(urls), 28)
+        self.assertEqual(len(urls), 29)
         for url in urls:
             with self.subTest(url=url):
                 self.assertTrue(url.startswith(ORIGIN + BASE + '/'))
@@ -62,7 +62,7 @@ class PagesTests(unittest.TestCase):
     def test_only_confirmed_project_is_published(self):
         import json
         content = json.loads((ROOT / 'app/content.json').read_text(encoding='utf-8'))
-        self.assertEqual(len(content['projects']), 2)
+        self.assertEqual(len(content['projects']), 3)
         project = content['projects'][0]
         self.assertEqual(len(project['features']), 10)
         self.assertIn('Full-Stack Laravel Developer', project['contribution'])
@@ -71,7 +71,15 @@ class PagesTests(unittest.TestCase):
         self.assertIn('Devotee photo upload', kumbh['features'])
         self.assertEqual(len(kumbh['screenshots']), 2)
         self.assertEqual(kumbh['technologies'], [])
-        for slug in ['treeva-healthcare-management-system', 'education-management-saas',
+        treeva = content['projects'][2]
+        self.assertEqual(treeva['slug'], 'treeva-healthcare-management-system')
+        self.assertEqual(sum(f.startswith('Website: ') for f in treeva['features']), 6)
+        self.assertEqual(sum(f.startswith('Admin panel: ') for f in treeva['features']), 10)
+        self.assertIn('Full-Stack Laravel Developer', treeva['contribution'])
+        page = (ROOT / 'projects' / treeva['slug'] / 'index.html').read_text(encoding='utf-8')
+        self.assertIn('Public website features', page)
+        self.assertIn('Admin panel features', page)
+        for slug in ['education-management-saas',
                      'crm-business-management-platform', 'hrms-payroll-system', 'warehouse-management-system']:
             for prefix in ['', 'portfolio/']:
                 self.assertFalse((ROOT / f'{prefix}projects/{slug}/index.html').exists())
