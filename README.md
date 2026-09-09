@@ -2,6 +2,21 @@
 
 A responsive, server-rendered PHP portfolio, extending the existing static project without adding a frontend framework. It includes 7 main pages, 12 service pages, 6 case studies, 6 starter articles, a private content manager and a SQLite-backed enquiry pipeline.
 
+## Live GitHub Pages website
+
+The existing public site is hosted at **https://krunal02101999.github.io/portfolio/**. GitHub Pages serves the committed static `index.html` and directory pages. `.nojekyll` prevents the README from becoming the homepage. Every asset, navigation link, canonical URL and sitemap entry includes the `/portfolio/` base path.
+
+Regenerate the public pages after changing templates or `app/content.json`:
+
+```powershell
+python scripts/build-pages.py
+python tests/test_pages.py
+```
+
+Commit the generated HTML along with the source and push `main`; the existing branch-based GitHub Pages deployment publishes it. The build uses a temporary database seeded only from the checked-in public content, never private leads or credentials.
+
+The public contact form uses the original website's Formspree endpoint. Email and WhatsApp links remain available. The database, sessions and `/admin` work only on PHP hosting, not GitHub Pages. CMS edits on a separate PHP installation do not automatically update the checked-in public seed or Pages export. Formspree delivery still depends on the existing Formspree account; the build never sends test messages.
+
 ## Run locally
 
 Requires PHP 8.2+ with PDO SQLite, mbstring, JSON and sessions. GD and fileinfo are required for screenshot uploads. No Composer or Node dependencies are required.

@@ -8,7 +8,13 @@ document.querySelectorAll('[data-filter-form]').forEach(form => {
  const status = document.querySelector('[data-filter-status]');
  const apply = value => { let count=0; cards.forEach(card => { const visible = value === 'All' || card.dataset.categories.split('|').includes(value); card.hidden = !visible; if(visible)count++; }); buttons.forEach(button => { const selected=button.dataset.filter===value; button.classList.toggle('selected', selected); button.setAttribute('aria-pressed', String(selected)); }); if(status)status.textContent=count ? `${count} ${count === 1 ? 'result' : 'results'}` : 'No entries in this category yet. Explore another category.'; };
  buttons.forEach(button => button.addEventListener('click', e => { e.preventDefault(); apply(button.dataset.filter); const url=new URL(location.href); button.dataset.filter==='All'?url.searchParams.delete('category'):url.searchParams.set('category',button.dataset.filter);history.replaceState(null,'',url); }));
+ const initial = new URLSearchParams(location.search).get('category');
+ if (initial && [...buttons].some(button => button.dataset.filter === initial)) apply(initial);
 });
 document.querySelectorAll('[data-confirm-delete]').forEach(form => form.addEventListener('submit',e=>{if(!confirm('Delete this content record? This cannot be undone.'))e.preventDefault();}));
 const inquiry=document.querySelector('#inquiry-form');
+const serviceTypes = {'custom-web-application-development':'Web Application','laravel-development':'Web Application','saas-development':'SaaS Platform','crm-development':'CRM','hrms-development':'HRMS','erp-development':'ERP','healthcare-management-system-development':'Healthcare System','inventory-management-system-development':'Inventory System','warehouse-management-system-development':'Warehouse System','api-development-integration':'API Integration','laravel-maintenance':'Existing Project Improvement','admin-panel-development':'Web Application'};
+const requestedService = new URLSearchParams(location.search).get('service');
+if (inquiry && serviceTypes[requestedService]) inquiry.elements.project_type.value = serviceTypes[requestedService];
 inquiry?.addEventListener('submit',()=>{if(inquiry.checkValidity()){const button=inquiry.querySelector('[type=submit]');button.disabled=true;button.textContent='Sending your enquiry…';}});
+window.addEventListener('pageshow', () => { const button = inquiry?.querySelector('[type=submit]'); if (button?.disabled) { button.disabled = false; button.textContent = 'Request a free project discussion'; } });

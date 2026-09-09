@@ -4,6 +4,7 @@ RewriteEngine On
 RewriteRule ^(?:app|scripts|tests|deploy|\.git)(?:/|$) - [F,L]
 RewriteRule ^(?:README\.md|router\.php|\.env.*|composer\..*|package\..*)$ - [F,L]
 RewriteRule ^(?:sitemap\.xml|robots\.txt|index\.html)$ index.php [L]
+RewriteRule ^(?:about|services|projects|technologies|blog|contact|privacy)(?:/|$) index.php [L]
 RewriteCond %{REQUEST_URI} !^/google27b034596b591f0d\.html$
 RewriteRule \.html$ index.php [L]
 RewriteCond %{REQUEST_FILENAME} !-f

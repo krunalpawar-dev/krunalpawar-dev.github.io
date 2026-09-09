@@ -11,6 +11,7 @@ server {
     location ~ ^/(README\.md|router\.php|Readme\.txt)$ { deny all; }
     location = /sitemap.xml { rewrite ^ /index.php last; }
     location = /robots.txt { rewrite ^ /index.php last; }
+    location ~ ^/(about|services|projects|technologies|blog|contact|privacy)(/|$) { rewrite ^ /index.php last; }
     location = /forms/contact.php { return 301 /contact; }
     location = /google27b034596b591f0d.html { try_files $uri =404; }
     location ~ \.html$ { rewrite ^ /index.php last; }
