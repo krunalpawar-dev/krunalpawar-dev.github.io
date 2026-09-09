@@ -1,0 +1,6 @@
+{
+  "name": "krunal-pawar-portfolio",
+  "private": true,
+  "scripts": {"test:navigation": "node --test tests/navigation.test.cjs"},
+  "devDependencies": {"jsdom": "26.1.0"}
+}

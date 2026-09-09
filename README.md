@@ -19,7 +19,7 @@ The public contact form uses the original website's Formspree endpoint. Email an
 
 ## Run locally
 
-Requires PHP 8.2+ with PDO SQLite, mbstring, JSON and sessions. GD and fileinfo are required for screenshot uploads. No Composer or Node dependencies are required.
+ Requires PHP 8.2+ with PDO SQLite, mbstring, JSON and sessions. GD and fileinfo are required for screenshot uploads. No Composer or Node dependencies are required to serve the site.
 
 ```powershell
 php -S 127.0.0.1:8085 router.php
@@ -82,6 +82,15 @@ Before launch:
 6. Run a deployed Lighthouse audit. The application uses server-rendered HTML, local assets, minimal JavaScript, reduced-motion support and lazy screenshot loading; no measured Lighthouse or Core Web Vitals score is claimed.
 
 ## Validation
+
+Internal public links use progressive navigation: the next HTML page is fetched and its content, navigation and SEO metadata are updated without reloading the document. Back/forward navigation restores scroll and project filters. Keyboard focus and a live announcement identify the new page. Downloads, external links, modified clicks, anchor links, admin pages and form submissions retain native behavior. Failed requests, timeouts or incompatible pages fall back to normal navigation. All pages remain complete static HTML and work without JavaScript.
+
+The navigation regression suite uses JSDOM as a development-only dependency; nothing from `node_modules` is loaded by the website:
+
+```sh
+npm ci
+npm run test:navigation
+```
 
 ```powershell
 python tests/test_site.py
