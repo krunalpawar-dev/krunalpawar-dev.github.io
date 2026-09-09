@@ -1,0 +1,26 @@
+# Adapt the server_name, root and PHP-FPM socket to your PHP host.
+server {
+    listen 80;
+    server_name portfolio.example.com;
+    root /var/www/portfolio;
+    index index.php;
+    client_max_body_size 1m;
+
+    location ~ ^/(app|scripts|tests|deploy|\.git)(/|$) { deny all; }
+    location ~ /\. { deny all; }
+    location ~ ^/(README\.md|router\.php|Readme\.txt)$ { deny all; }
+    location = /sitemap.xml { rewrite ^ /index.php last; }
+    location = /robots.txt { rewrite ^ /index.php last; }
+    location = /forms/contact.php { return 301 /contact; }
+    location = /google27b034596b591f0d.html { try_files $uri =404; }
+    location ~ \.html$ { rewrite ^ /index.php last; }
+    location /assets/ { try_files $uri =404; expires 7d; add_header X-Content-Type-Options nosniff; }
+    location / { try_files $uri /index.php?$query_string; }
+    location = /index.php {
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root/index.php;
+        fastcgi_pass unix:/run/php/php8.4-fpm.sock;
+        fastcgi_param APP_URL https://portfolio.example.com;
+    }
+    location ~ \.php$ { deny all; }
+}

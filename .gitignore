@@ -1,0 +1,6 @@
+/vendor/
+/node_modules/
+/.env
+/config.local.php
+*.sqlite*
+/test-results/

@@ -1,0 +1,1 @@
+<section class="not-found container"><span class="eyebrow">404 / A SMALL DETOUR</span><h1>This page isn’t here.</h1><p>The link may have changed. Let’s get you back to something useful.</p><div class="button-row"><a class="button" href="/">Back to home <?=icon('arrow')?></a><a class="button secondary" href="/projects">Explore the work</a></div></section>
