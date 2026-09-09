@@ -42,6 +42,48 @@
       ],
       "screenshots": [],
       "published": true
+    },
+    {
+      "slug": "kumbhsnaan-digital-ritual-booking-platform",
+      "title": "KumbhSnaan – Digital Gateway to Nashik Simhastha Kumbh",
+      "short": "KumbhSnaan",
+      "theme": "spiritual",
+      "icon": "grid",
+      "industry": "Spiritual services · Nashik",
+      "categories": [
+        "Website"
+      ],
+      "description": "A digital spiritual platform connecting devotees worldwide with Nashik Simhastha Kumbh through personalized Digital Snaan and Sankalp ritual bookings.",
+      "features": [
+        "Digital Snaan & Sankalp bookings",
+        "Devotee photo upload",
+        "Personal prayer submission",
+        "Preferred sacred date selection",
+        "Multiple ritual packages",
+        "Personalized ritual videos",
+        "Digital participation certificates",
+        "Holy Godavari Water & Prasad offerings"
+      ],
+      "problem": "Devotees living away from Nashik need a simple way to participate in sacred traditions remotely. The platform brings ritual information, package choices and personalized booking details into one accessible online journey.",
+      "solution": "KumbhSnaan lets devotees choose a ritual package and preferred sacred date, upload a photo and share their prayer. The service connects these requests with rituals performed by verified priests at holy kunds in Nashik. Depending on the package, devotees receive personalized ritual videos, digital certificates and sacred offerings such as Holy Godavari Water and Prasad.",
+      "contribution": "I developed KumbhSnaan, a digital spiritual platform bringing ritual discovery, package selection and personalized booking together in one website.",
+      "impact": "The platform makes it easier for devotees to arrange participation from anywhere in the world. A guided booking journey brings the information needed for personalized rituals and delivery together, while clear package details help visitors understand what they will receive.",
+      "related_services": [
+        "custom-web-application-development"
+      ],
+      "architecture": "Ritual discovery & booking",
+      "technologies": [],
+      "screenshots": [
+        {
+          "src": "/assets/img/portfolio/kumbhsnaan/home.jpg",
+          "alt": "KumbhSnaan homepage introducing Digital Snaan and the ritual booking journey. Frame from the supplied project recording."
+        },
+        {
+          "src": "/assets/img/portfolio/kumbhsnaan/booking.jpg",
+          "alt": "KumbhSnaan booking form with contact details and devotee photo upload. Frame from the supplied project recording."
+        }
+      ],
+      "published": true
     }
   ],
   "services": [
@@ -614,6 +656,11 @@
     {
       "slug": "hrms",
       "title": "HRMS",
+      "published": true
+    },
+    {
+      "slug": "website",
+      "title": "Website",
       "published": true
     }
   ],

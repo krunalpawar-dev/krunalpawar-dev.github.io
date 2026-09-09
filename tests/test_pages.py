@@ -30,7 +30,7 @@ class PagesTests(unittest.TestCase):
     def test_all_public_pages_and_links(self):
         sitemap = ET.parse(ROOT / 'sitemap.xml')
         urls = [el.text for el in sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-        self.assertEqual(len(urls), 27)
+        self.assertEqual(len(urls), 28)
         for url in urls:
             with self.subTest(url=url):
                 self.assertTrue(url.startswith(ORIGIN + BASE + '/'))
@@ -62,10 +62,15 @@ class PagesTests(unittest.TestCase):
     def test_only_confirmed_project_is_published(self):
         import json
         content = json.loads((ROOT / 'app/content.json').read_text(encoding='utf-8'))
-        self.assertEqual(len(content['projects']), 1)
+        self.assertEqual(len(content['projects']), 2)
         project = content['projects'][0]
         self.assertEqual(len(project['features']), 10)
         self.assertIn('Full-Stack Laravel Developer', project['contribution'])
+        kumbh = content['projects'][1]
+        self.assertEqual(kumbh['slug'], 'kumbhsnaan-digital-ritual-booking-platform')
+        self.assertIn('Devotee photo upload', kumbh['features'])
+        self.assertEqual(len(kumbh['screenshots']), 2)
+        self.assertEqual(kumbh['technologies'], [])
         for slug in ['treeva-healthcare-management-system', 'education-management-saas',
                      'crm-business-management-platform', 'hrms-payroll-system', 'warehouse-management-system']:
             for prefix in ['', 'portfolio/']:

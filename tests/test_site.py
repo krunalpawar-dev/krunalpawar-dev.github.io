@@ -143,7 +143,7 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(status, 200)
         root = ET.fromstring(xml)
         sitemap_urls = {el.text for el in root.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')}
-        self.assertEqual(len(sitemap_urls), 26)
+        self.assertEqual(len(sitemap_urls), 27)
         self.assertTrue({self.origin + r for r in routes if r != '/privacy'} <= sitemap_urls)
         _, robots, _ = self.request('/robots.txt')
         self.assertIn('Disallow: /admin', robots)
@@ -162,7 +162,7 @@ class SiteTests(unittest.TestCase):
     def test_project_and_blog_filters_without_javascript(self):
         _, html, _ = self.request('/projects?category=HRMS')
         self.assertIn('1 case study', html)
-        self.assertEqual(len(re.findall(r'<article hidden class="project-card"', html)), 0)
+        self.assertEqual(len(re.findall(r'<article hidden class="project-card"', html)), 1)
         _, html, _ = self.request('/blog?category=PHP')
         self.assertIn('No articles in this category yet', html)
         self.assertIn('aria-pressed="true">PHP', html)

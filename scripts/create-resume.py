@@ -42,6 +42,7 @@ text('SELECTED PROJECT EXPERIENCE', 'section')
 projects = [
 ('Bharat Medical Hall - Back Office & Business Management System', 'Baripada, Odisha | Full-Stack Laravel Developer. Independently developed the complete website and back-office platform: architecture, database design, backend, business logic and user interface.'),
 ('Ten connected business modules', 'Orders, employee attendance, leave, payroll and salary, payslips, projects and tasks, challans, suppliers, customers and expenses. Centralizes daily operations to reduce manual work and improve administrative control.'),
+('KumbhSnaan - Digital Gateway to Nashik Simhastha Kumbh', 'Developed a spiritual booking platform for devotees worldwide. Features include Digital Snaan and Sankalp bookings, photo and prayer submission, preferred date and package selection, personalized ritual videos, digital certificates and sacred offerings.'),
 ]
 text('Additional services available: custom CRM, inventory, warehouse and SaaS applications.', 'small')
 

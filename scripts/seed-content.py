@@ -32,6 +32,18 @@ project('bharat-medical-backoffice-management-system','Bharat Medical Hall – B
     'Centralized business management', tech='Laravel|PHP')
 
 
+project('kumbhsnaan-digital-ritual-booking-platform', 'KumbhSnaan – Digital Gateway to Nashik Simhastha Kumbh', 'KumbhSnaan', 'spiritual', 'Spiritual services · Nashik', 'Website',
+    'A digital spiritual platform connecting devotees worldwide with Nashik Simhastha Kumbh through personalized Digital Snaan and Sankalp ritual bookings.',
+    'Digital Snaan & Sankalp bookings|Devotee photo upload|Personal prayer submission|Preferred sacred date selection|Multiple ritual packages|Personalized ritual videos|Digital participation certificates|Holy Godavari Water & Prasad offerings',
+    'Devotees living away from Nashik need a simple way to participate in sacred traditions remotely. The platform brings ritual information, package choices and personalized booking details into one accessible online journey.',
+    'KumbhSnaan lets devotees choose a ritual package and preferred sacred date, upload a photo and share their prayer. The service connects these requests with rituals performed by verified priests at holy kunds in Nashik. Depending on the package, devotees receive personalized ritual videos, digital certificates and sacred offerings such as Holy Godavari Water and Prasad.',
+    'I developed KumbhSnaan, a digital spiritual platform bringing ritual discovery, package selection and personalized booking together in one website.',
+    'The platform makes it easier for devotees to arrange participation from anywhere in the world. A guided booking journey brings the information needed for personalized rituals and delivery together, while clear package details help visitors understand what they will receive.',
+    'custom-web-application-development', 'Ritual discovery & booking', tech='',
+    screenshots=[{'src':'/assets/img/portfolio/kumbhsnaan/home.jpg','alt':'KumbhSnaan homepage introducing Digital Snaan and the ritual booking journey. Frame from the supplied project recording.'},
+                 {'src':'/assets/img/portfolio/kumbhsnaan/booking.jpg','alt':'KumbhSnaan booking form with contact details and devotee photo upload. Frame from the supplied project recording.'}])
+projects[-1]['technologies'] = []  # Technology stack has not been supplied for this project.
+
 technologies=[]
 groups={
 'Backend':{'Laravel':'My primary framework for business applications, authorization, validation and background jobs.','PHP':'The server-side foundation for application logic, integrations and maintainable business rules.','REST APIs':'Structured endpoints that connect interfaces, mobile clients and external services.'},
@@ -97,5 +109,5 @@ for item in services:
 faqs.insert(0, dict(slug='not-technical', title='Do I need to understand software to get started?', answer='No. Tell me how your business works and what is difficult to manage. You can show me a spreadsheet or describe a repeated task. I will help turn that into a clear list of requirements.', published=True))
 faqs.append(dict(slug='timeline', title='How long will the project take?', answer='The timeline depends on the features, the information we need to move and the tools we need to connect. After our first discussion, we agree on a realistic scope and schedule before development begins.', published=True))
 faqs.append(dict(slug='budget-unknown', title='Can we talk if I do not have a fixed budget?', answer='Yes. Choose “Let’s discuss” on the enquiry form. We can identify the most useful first version and discuss its scope before I prepare a quotation. The initial discussion is free.', published=True))
-data={'projects':projects,'services':services,'posts':posts,'technologies':technologies,'faqs':faqs,'testimonials':[], 'project_categories':[{'slug':s.lower(),'title':s,'published':True} for s in ['Laravel','Healthcare','HRMS']], 'blog_categories':[{'slug':s.lower().replace(' ','-'),'title':s,'published':True} for s in ['Laravel','PHP','SaaS Development','Web Development','Business Software','CRM','HRMS','APIs','Software Development']]}
+data={'projects':projects,'services':services,'posts':posts,'technologies':technologies,'faqs':faqs,'testimonials':[], 'project_categories':[{'slug':s.lower(),'title':s,'published':True} for s in ['Laravel','Healthcare','HRMS','Website']], 'blog_categories':[{'slug':s.lower().replace(' ','-'),'title':s,'published':True} for s in ['Laravel','PHP','SaaS Development','Web Development','Business Software','CRM','HRMS','APIs','Software Development']]}
 Path(__file__).resolve().parents[1].joinpath('app/content.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')

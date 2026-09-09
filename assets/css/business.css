@@ -17,6 +17,9 @@ body.page-loading:before{content:'';position:fixed;z-index:100;top:0;left:0;heig
 @media(max-width:1000px){.business-overview{padding:25px}.business-overview h2{font-size:1.65rem}.business-task{gap:10px}.nav-wrap nav{gap:18px}}
 @media(max-width:680px){.business-overview{padding:26px 23px;border-radius:12px}.business-overview h2{font-size:1.8rem}.business-task{gap:14px}.business-task h3{font-size:1rem}.business-task p{font-size:.9rem}.hero-reassurance{font-size:.8rem}.hero-proof{align-items:flex-start}.hero .hero-proof strong{font-size:.75rem}.hero .hero-proof span{font-size:.72rem}.hero+.section{padding-top:30px}}
 /* Give a single completed project the full feature area. */
+.project-preview { background: #fff8ec; display: flex; align-items: center; aspect-ratio: 16 / 10; overflow: hidden; }
+.project-preview img { display: block; width: 100%; height: auto; }
+.case-hero .project-preview { aspect-ratio: auto; }
 .project-grid > .project-card:only-child { grid-column: 1 / -1; }
 @media (min-width: 900px) {
   .project-grid > .project-card:only-child { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }

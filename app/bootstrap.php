@@ -54,6 +54,11 @@ function send_lead_email(array $lead): bool {
     return @mail($config['email'], 'New portfolio project enquiry #'.$lead['id'], $body, ['From'=>$config['mail_from'],'Reply-To'=>$lead['email'],'Content-Type'=>'text/plain; charset=UTF-8']);
 }
 function project_visual(array $p): void {
+    if (!empty($p['screenshots'])) {
+        $shot=$p['screenshots'][0];
+        echo '<div class="project-preview"><img src="'.e($shot['src']).'" alt="'.e($shot['alt']).'" width="1400" height="594" loading="lazy" decoding="async"></div>';
+        return;
+    }
     $themes=['medical'=>'Healthcare operations','treeva'=>'Connected patient care','education'=>'One platform. Many institutions.','crm'=>'A clearer sales process','hrms'=>'People. Policies. Payroll.','warehouse'=>'Every movement, connected.'];
     echo '<div class="project-visual theme-'.e($p['theme']).'" aria-label="'.e($p['title']).' system diagram"><div class="visual-top"><span class="mini-brand">'.icon($p['icon']).' '.e($p['short']).'</span><span class="visual-caption">SYSTEM OVERVIEW</span></div><div class="diagram-title">'.e($themes[$p['theme']] ?? $p['title']).'</div><div class="flow-diagram">';
     foreach (array_slice($p['features'],0,3) as $i=>$f) echo '<div><span class="node-number">0'.($i+1).'</span><span>'.e($f).'</span>'.icon('check').'</div>';
