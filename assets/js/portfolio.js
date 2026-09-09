@@ -17,4 +17,4 @@ const serviceTypes = {'custom-web-application-development':'Web Application','la
 const requestedService = new URLSearchParams(location.search).get('service');
 if (inquiry && serviceTypes[requestedService]) inquiry.elements.project_type.value = serviceTypes[requestedService];
 inquiry?.addEventListener('submit',()=>{if(inquiry.checkValidity()){const button=inquiry.querySelector('[type=submit]');button.disabled=true;button.textContent='Sending your enquiry…';}});
-window.addEventListener('pageshow', () => { const button = inquiry?.querySelector('[type=submit]'); if (button?.disabled) { button.disabled = false; button.textContent = 'Request a free project discussion'; } });
+window.addEventListener('pageshow', () => { const button = inquiry?.querySelector('[type=submit]'); if (button?.disabled) { button.disabled = false; button.textContent = 'Request a free consultation'; } });

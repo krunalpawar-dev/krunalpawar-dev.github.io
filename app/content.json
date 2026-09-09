@@ -11,7 +11,7 @@
         "Laravel",
         "Healthcare"
       ],
-      "description": "A centralized back-office system for orders, employees and everyday medical retail operations.",
+      "description": "Orders, employee details and attendance in one place for a medical retail business.",
       "features": [
         "Order management",
         "Employee management",
@@ -24,7 +24,7 @@
       "problem": "Medical retail operations involve more than fulfilling orders. Staff records, attendance and administrative responsibilities also need a consistent home. The project addressed the need to manage these internal processes from a centralized platform.",
       "solution": "The back-office application brings order, employee and attendance management together, with role-based access to administrative functions. The structure gives the team one place to manage operational records.",
       "contribution": "I developed the custom back-office management system described here, including order, employee, attendance and user-management functionality.",
-      "impact": "The system provides a centralized workflow for internal operations. It supports clearer ownership of records and reduces the need to move between separate administrative processes. Quantified performance results have not been supplied.",
+      "impact": "Staff can manage orders, employee records and attendance in the same system, with access based on their responsibilities.",
       "related_services": [
         "healthcare-management-system-development",
         "admin-panel-development"
@@ -50,7 +50,7 @@
         "Healthcare",
         "Website"
       ],
-      "description": "A public-facing healthcare website connected to a complete patient and operations platform.",
+      "description": "A healthcare website for patient enquiries, connected to appointment, billing and staff management.",
       "features": [
         "Patient management",
         "Appointment management",
@@ -64,7 +64,7 @@
       "problem": "The public-facing experience needed to explain healthcare services and collect patient enquiries and appointment requests. The internal team also needed a place to manage those requests alongside patient records, billing and daily operations.",
       "solution": "The project combines a lead-focused public website with a healthcare administration platform. Enquiries and appointment requests become inputs to the operational workflow, while billing, services and staff are managed within the admin system.",
       "contribution": "My work covered the public website and the administration functionality outlined in this case study, connecting enquiry generation with healthcare operations.",
-      "impact": "The website and admin platform support a connected journey from initial enquiry to appointment and billing. The operational value is a shared workflow; no patient-growth or revenue figures are claimed.",
+      "impact": "The website collects enquiries and appointment requests, while the administration system gives staff a place to manage patients, bills, services and daily work.",
       "related_services": [
         "healthcare-management-system-development",
         "custom-web-application-development"
@@ -89,7 +89,7 @@
         "Laravel",
         "SaaS"
       ],
-      "description": "An institution management platform designed around scalable SaaS architecture.",
+      "description": "Student records, attendance, fees and academic administration for educational institutions.",
       "features": [
         "Student management",
         "Staff management",
@@ -102,7 +102,7 @@
       "problem": "Educational institutions need to coordinate student information, staff, attendance, academics and fees. A SaaS model adds the requirement to serve multiple institutions while maintaining appropriate organizational boundaries.",
       "solution": "The platform groups institutional workflows within a SaaS application. Tenant-aware access and shared application architecture provide a foundation for adding institutions without duplicating the product for each organization.",
       "contribution": "My contribution focused on the education-management functionality and SaaS architecture described here, covering institutional records, permissions and administrative workflows.",
-      "impact": "The platform provides institutions with a consistent way to manage academic and administrative information. Its architecture supports growth across organizations; capacity and usage figures require production measurement.",
+      "impact": "The platform brings student, staff, attendance and fee information together. It is designed to serve multiple institutions while keeping each organization’s records separate.",
       "related_services": [
         "saas-development",
         "custom-web-application-development"
@@ -128,7 +128,7 @@
         "CRM",
         "ERP"
       ],
-      "description": "Connected leads, customer records and follow-ups for a more organized sales workflow.",
+      "description": "Customer details, sales leads, tasks and follow-ups together for the sales team.",
       "features": [
         "Lead management",
         "Customer management",
@@ -141,7 +141,7 @@
       "problem": "Sales teams need visibility into lead ownership, previous conversations and the next action. When those details are separated, following up consistently becomes difficult.",
       "solution": "CRM functionality connects leads and customers with tasks, follow-ups and activity history. Sales process management gives the team a shared view of where an opportunity stands and what should happen next.",
       "contribution": "I developed CRM functionality covering the lead, customer, activity and task workflows described in this project.",
-      "impact": "Connected records make sales activity easier to review and help the team identify pending follow-ups. No conversion-rate or revenue improvements are asserted.",
+      "impact": "Staff can review a customer’s details, see previous activity and identify the next follow-up without assembling the record from separate tools.",
       "related_services": [
         "crm-development",
         "erp-development"
@@ -175,7 +175,7 @@
         "Laravel",
         "HRMS"
       ],
-      "description": "Attendance, leave policies and payroll brought together in a structured employee management system.",
+      "description": "Employee records, attendance, leave and payroll managed through a connected staff system.",
       "features": [
         "Employee management",
         "Attendance",
@@ -193,7 +193,7 @@
       "problem": "Payroll depends on more than a total of hours worked. Shift assignments, biometric events, leave balances, comp off and policy exceptions all affect the inputs that must be reviewed.",
       "solution": "The HRMS connects employee records, attendance, leave and timesheets with payroll preparation. Salary templates and payslip generation support a repeatable payroll workflow, while policy handling accounts for the rules that shape attendance and leave decisions.",
       "contribution": "My development work covered the HRMS and payroll functionality listed here, including biometric attendance integration and the related employee-policy workflows.",
-      "impact": "The system brings payroll inputs into a connected process and helps make attendance and leave decisions more consistent. Payroll accuracy and time savings should be measured against real usage rather than assumed.",
+      "impact": "Attendance, leave and timesheet information feed into payroll preparation, giving the team connected records to review before generating payslips.",
       "related_services": [
         "hrms-development",
         "api-development-integration"
@@ -220,7 +220,7 @@
         "ERP",
         "API"
       ],
-      "description": "An operational platform connecting inbound, putaway, retrieval and inventory control.",
+      "description": "Track goods from arrival to storage and dispatch, with stock counts and barcode support.",
       "features": [
         "Inbound management",
         "Putaway",
@@ -235,7 +235,7 @@
       "problem": "Warehouse operations depend on accurate location and movement information. Receiving, storing and retrieving stock must remain consistent with the inventory data used by connected ERP and transport systems.",
       "solution": "The WMS organizes inventory through inbound, putaway, storage and retrieval workflows. Cycle counting and barcode integration support physical operations, with ERP and TMS integration connecting warehouse events to surrounding business systems.",
       "contribution": "I developed warehouse-management functionality across the workflows and integrations described in this case study.",
-      "impact": "The system supports traceable stock movements and a more consistent operational view of inventory. Inventory accuracy is a goal of the workflow; no unverified accuracy percentage is presented.",
+      "impact": "The system records warehouse movements and stock locations. Staff can review receiving, storage, retrieval and count information alongside connected business systems.",
       "related_services": [
         "warehouse-management-system-development",
         "inventory-management-system-development",
@@ -254,8 +254,8 @@
   "services": [
     {
       "slug": "custom-web-application-development",
-      "title": "Custom web applications",
-      "description": "Software shaped around the way your business actually works.",
+      "title": "Software for your daily operations",
+      "description": "Still copying information between spreadsheets? Bring your records, tasks and approvals into one place.",
       "icon": "code",
       "features": [
         "Workflow automation",
@@ -266,12 +266,13 @@
       ],
       "problem": "Spreadsheets, disconnected tools and repeated data entry can make simple operations difficult to manage.",
       "approach": "We map the workflow first, define the people and decisions involved, and build a focused application around those requirements. You get a system designed for your operations, with a clear path for future improvements.",
-      "published": true
+      "published": true,
+      "seo_title": "Custom web applications"
     },
     {
       "slug": "laravel-development",
-      "title": "Laravel development",
-      "description": "A dependable backend for your next big idea.",
+      "title": "Custom Laravel development",
+      "description": "Build a dependable business application, or add the features your existing Laravel software needs.",
       "icon": "terminal",
       "features": [
         "Laravel and PHP",
@@ -282,12 +283,13 @@
       ],
       "problem": "A growing application needs more than a collection of features. It needs clear business rules, reliable data and code that can be maintained.",
       "approach": "I build Laravel applications with explicit validation, scoped permissions and a structured data model. Background work goes into queues, and important workflows are tested before deployment.",
-      "published": true
+      "published": true,
+      "seo_title": "Laravel development"
     },
     {
       "slug": "saas-development",
-      "title": "SaaS & multi-tenant platforms",
-      "description": "Turn your product idea into a platform built to grow.",
+      "title": "Turn your idea into an online product",
+      "description": "Build a subscription-based product that customers can sign up for and use online (SaaS).",
       "icon": "layers",
       "features": [
         "Multi-tenant architecture",
@@ -298,12 +300,13 @@
       ],
       "problem": "A SaaS product must serve different organizations without mixing their data or making every customer a separate maintenance project.",
       "approach": "We define the tenant boundary, access rules and subscription model early. I build the core product around a focused first release, with tenant-aware operations and a plan for onboarding, monitoring and growth.",
-      "published": true
+      "published": true,
+      "seo_title": "SaaS & multi-tenant platforms"
     },
     {
       "slug": "crm-development",
-      "title": "CRM development",
-      "description": "Keep your leads, customers and next steps connected.",
+      "title": "Customer & sales management",
+      "description": "Keep leads, customer details and follow-up reminders together so your team knows the next step. Often called a CRM.",
       "icon": "grid",
       "features": [
         "Lead management",
@@ -315,12 +318,13 @@
       ],
       "problem": "When lead information lives in separate spreadsheets and conversations, follow-ups are easy to miss and sales activity is difficult to understand.",
       "approach": "I bring customer records, ownership and next actions into one workflow. The pipeline reflects your sales process, so the team can see what needs attention without assembling information from multiple tools.",
-      "published": true
+      "published": true,
+      "seo_title": "CRM development"
     },
     {
       "slug": "hrms-development",
-      "title": "HRMS & payroll systems",
-      "description": "Make people operations clearer, from attendance to payroll.",
+      "title": "Staff, attendance & payroll",
+      "description": "Manage employee records, shifts, leave and salary calculations in one connected system (HRMS).",
       "icon": "grid",
       "features": [
         "Employee management",
@@ -333,12 +337,13 @@
       ],
       "problem": "Attendance exceptions, changing shifts and different leave policies make payroll preparation time-consuming and difficult to verify.",
       "approach": "We document policy rules and exception handling before development. Attendance, leave and payroll are connected through reviewable steps, with access controls for employee and salary information.",
-      "published": true
+      "published": true,
+      "seo_title": "HRMS & payroll systems"
     },
     {
       "slug": "erp-development",
-      "title": "ERP development",
-      "description": "Connect the operations that keep your business moving.",
+      "title": "Connect your business operations",
+      "description": "Bring orders, purchasing, approvals and department records into a shared business system (ERP).",
       "icon": "layers",
       "features": [
         "Operational dashboards",
@@ -350,12 +355,13 @@
       ],
       "problem": "Separate departmental tools can create duplicate records and conflicting versions of the same business information.",
       "approach": "I plan shared entities and ownership with your team, then connect modules incrementally. Explicit approval steps and traceable records help departments work from the same information.",
-      "published": true
+      "published": true,
+      "seo_title": "ERP development"
     },
     {
       "slug": "healthcare-management-system-development",
-      "title": "Healthcare management systems",
-      "description": "Connect patient enquiries with everyday healthcare operations.",
+      "title": "Clinic & healthcare management",
+      "description": "Manage patient enquiries, appointments, billing and staff from one administration system.",
       "icon": "shield",
       "features": [
         "Patients and appointments",
@@ -367,12 +373,13 @@
       ],
       "problem": "A public website may collect enquiries while the operations team handles appointments, billing and staff in disconnected tools.",
       "approach": "I connect enquiry capture with a purpose-built administration platform. Patient information and operational functions receive scoped permissions, and workflows are designed around the staff who use them.",
-      "published": true
+      "published": true,
+      "seo_title": "Healthcare management systems"
     },
     {
       "slug": "inventory-management-system-development",
-      "title": "Inventory management systems",
-      "description": "Know what is in stock, where it is and what happens next.",
+      "title": "Stock & order management",
+      "description": "Track products, purchases, sales and stock transfers so your team can see where items are.",
       "icon": "grid",
       "features": [
         "Products and stock",
@@ -384,12 +391,13 @@
       ],
       "problem": "Manual stock updates can leave teams with conflicting counts and little visibility into how inventory changed.",
       "approach": "We define the stock movement model and validation rules first. Receiving, dispatch and transfers update inventory through recorded transactions so teams can trace adjustments and investigate differences.",
-      "published": true
+      "published": true,
+      "seo_title": "Inventory management systems"
     },
     {
       "slug": "warehouse-management-system-development",
-      "title": "Warehouse management systems",
-      "description": "Bring structure to every movement through your warehouse.",
+      "title": "Warehouse management",
+      "description": "Organize receiving, storage, picking and stock counts, with barcode support and connections to your other systems.",
       "icon": "layers",
       "features": [
         "Inbound and putaway",
@@ -401,12 +409,13 @@
       ],
       "problem": "Warehouse teams need a consistent view of what arrived, where it was stored and what is ready to leave.",
       "approach": "I build workflows around warehouse locations and inventory movements. Barcode-led steps, cycle counts and integration checkpoints help teams identify exceptions before they spread across connected systems.",
-      "published": true
+      "published": true,
+      "seo_title": "Warehouse management systems"
     },
     {
       "slug": "api-development-integration",
-      "title": "API development & integration",
-      "description": "Make your applications work better together.",
+      "title": "Connect your existing software",
+      "description": "Help your tools exchange information, including payments, file storage and other business services (API integration).",
       "icon": "link",
       "features": [
         "REST APIs",
@@ -418,12 +427,13 @@
       ],
       "problem": "Systems that cannot exchange information often leave your team copying records and resolving avoidable mismatches.",
       "approach": "I design validated APIs and integration flows with clear authentication, failure handling and retry behavior. External responses are checked, and repeated events are handled carefully to avoid duplicate operations.",
-      "published": true
+      "published": true,
+      "seo_title": "API development & integration"
     },
     {
       "slug": "laravel-maintenance",
-      "title": "Maintenance & improvements",
-      "description": "A practical way forward for the application you already have.",
+      "title": "Fix or improve existing software",
+      "description": "Get help with bugs, slow screens and missing features in your existing Laravel application.",
       "icon": "shield",
       "features": [
         "Bug investigation and fixing",
@@ -435,12 +445,13 @@
       ],
       "problem": "An existing Laravel application can accumulate bugs, slow workflows or features that no longer fit the business.",
       "approach": "I start by reproducing the issue and understanding the affected workflow. Changes stay focused, with regression checks and a deployment plan that accounts for the current application and its users.",
-      "published": true
+      "published": true,
+      "seo_title": "Maintenance & improvements"
     },
     {
       "slug": "admin-panel-development",
-      "title": "Admin panel development",
-      "description": "Give your team the controls they need to run the business.",
+      "title": "A control panel for your team",
+      "description": "Give staff a simple way to manage records, review requests and update information, with the right access for each person.",
       "icon": "grid",
       "features": [
         "Operational dashboards",
@@ -452,7 +463,8 @@
       ],
       "problem": "Teams need safe, efficient ways to manage application data without relying on a developer for everyday changes.",
       "approach": "I build admin interfaces around real tasks, with clear validation, permission checks and useful status information. Sensitive changes receive appropriate safeguards and deliberate review steps.",
-      "published": true
+      "published": true,
+      "seo_title": "Admin panel development"
     }
   ],
   "posts": [
@@ -746,6 +758,12 @@
   ],
   "faqs": [
     {
+      "slug": "not-technical",
+      "title": "Do I need to understand software to get started?",
+      "answer": "No. Tell me how your business works and what is difficult to manage. You can show me a spreadsheet or describe a repeated task. I will help turn that into a clear list of requirements.",
+      "published": true
+    },
+    {
       "slug": "remote",
       "title": "Do you work with clients outside India?",
       "answer": "Yes. I work remotely with businesses in India and internationally. We agree on communication, review milestones and a practical meeting schedule before starting.",
@@ -773,6 +791,18 @@
       "slug": "support",
       "title": "What happens after launch?",
       "answer": "Deployment, handover and support expectations are agreed as part of the project. Ongoing maintenance and new features can be scoped separately as your requirements evolve.",
+      "published": true
+    },
+    {
+      "slug": "timeline",
+      "title": "How long will the project take?",
+      "answer": "The timeline depends on the features, the information we need to move and the tools we need to connect. After our first discussion, we agree on a realistic scope and schedule before development begins.",
+      "published": true
+    },
+    {
+      "slug": "budget-unknown",
+      "title": "Can we talk if I do not have a fixed budget?",
+      "answer": "Yes. Choose “Let’s discuss” on the enquiry form. We can identify the most useful first version and discuss its scope before I prepare a quotation. The initial discussion is free.",
       "published": true
     }
   ],

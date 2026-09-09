@@ -167,7 +167,7 @@ class SiteTests(unittest.TestCase):
         self.assertIn('No articles in this category yet', html)
         self.assertIn('aria-pressed="true">PHP', html)
         _, html, _ = self.request('/contact?service=crm-development')
-        self.assertIn('<option selected>CRM</option>', html)
+        self.assertIn('<option value="CRM" selected>Customers, sales &amp; follow-ups</option>', html)
 
     def test_enquiry_persistence_and_replay(self):
         _, html, headers = self.request('/contact')
