@@ -33,7 +33,7 @@ def build():
             sock.bind(('127.0.0.1', 0))
             port = sock.getsockname()[1]
         env = dict(os.environ, APP_URL=PUBLIC, STORAGE_PATH=temporary, MAIL_ENABLED='false', ADMIN_PASSWORD_HASH='')
-        with open(Path(temporary) / 'render.log', 'w+', encoding='utf-8') as log:
+        with open(Path(temporary) / 'render.log', 'w+', encoding='utf-8', newline='\n') as log:
             process = subprocess.Popen([php, '-S', f'127.0.0.1:{port}', 'router.php'], cwd=ROOT, env=env, stdout=log, stderr=log)
             local = f'http://127.0.0.1:{port}'
             try:
@@ -57,7 +57,7 @@ def build():
 
                 for route in routes:
                     with urlopen(local + route) as response:
-                        html = response.read().decode('utf-8')
+                        html = response.read().decode('utf-8').replace('\r\n', '\n')
                     if route == '/contact':
                         html = html.replace('action="/contact"', f'action="{FORM}"')
                         html = re.sub(r'<input type="hidden" name="csrf" value="[^"]+">', '', html)
@@ -74,16 +74,16 @@ def build():
                             html = html.replace(PUBLIC + public_route + '"', PUBLIC + public_route + '/"')
                     destination = ROOT / route.strip('/') / 'index.html' if route != '/' else ROOT / 'index.html'
                     destination.parent.mkdir(parents=True, exist_ok=True)
-                    destination.write_text(html, encoding='utf-8')
+                    destination.write_text(html, encoding='utf-8', newline='\n')
                 try:
                     urlopen(local + '/missing-page')
                     raise RuntimeError('Missing page must return 404.')
                 except HTTPError as error:
                     if error.code != 404:
                         raise
-                    html = error.read().decode('utf-8')
+                    html = error.read().decode('utf-8').replace('\r\n', '\n')
                     html = re.sub(r'(href|src|action)="(/[^"\s]*)"', rewrite, html)
-                    (ROOT / '404.html').write_text(html, encoding='utf-8')
+                    (ROOT / '404.html').write_text(html, encoding='utf-8', newline='\n')
             finally:
                 process.terminate()
                 process.wait(timeout=10)
@@ -93,9 +93,9 @@ def build():
                 raise RuntimeError('The renderer emitted PHP diagnostics.')
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sitemap += ''.join(f'<url><loc>{PUBLIC}{route.rstrip("/")}/</loc></url>\n' for route in routes)
-    (ROOT / 'sitemap.xml').write_text(sitemap + '</urlset>\n', encoding='utf-8')
-    (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: {BASE}/\nDisallow: {BASE}/app/\nDisallow: {BASE}/scripts/\nDisallow: {BASE}/tests/\nSitemap: {PUBLIC}/sitemap.xml\n', encoding='utf-8')
-    (ROOT / '.nojekyll').write_text('', encoding='utf-8')
+    (ROOT / 'sitemap.xml').write_text(sitemap + '</urlset>\n', encoding='utf-8', newline='\n')
+    (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: {BASE}/\nDisallow: {BASE}/app/\nDisallow: {BASE}/scripts/\nDisallow: {BASE}/tests/\nSitemap: {PUBLIC}/sitemap.xml\n', encoding='utf-8', newline='\n')
+    (ROOT / '.nojekyll').write_text('', encoding='utf-8', newline='\n')
     print(f'Built {len(routes)} public HTML pages, 404 page and sitemap for {PUBLIC}/')
 
 if __name__ == '__main__':
