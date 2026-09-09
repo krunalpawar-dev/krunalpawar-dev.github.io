@@ -1,6 +1,6 @@
 User-agent: *
-Allow: /portfolio/
-Disallow: /portfolio/app/
-Disallow: /portfolio/scripts/
-Disallow: /portfolio/tests/
-Sitemap: https://krunal02101999.github.io/portfolio/sitemap.xml
+Allow: /
+Disallow: /app/
+Disallow: /scripts/
+Disallow: /tests/
+Sitemap: https://krunalpawar-dev.github.io/sitemap.xml

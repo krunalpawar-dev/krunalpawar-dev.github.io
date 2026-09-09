@@ -8,8 +8,8 @@ from urllib.parse import urlsplit, unquote
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = '/portfolio'
-ORIGIN = 'https://krunal02101999.github.io'
+BASE = ''
+ORIGIN = 'https://krunalpawar-dev.github.io'
 
 class PageParser(HTMLParser):
     def __init__(self):
@@ -58,6 +58,14 @@ class PagesTests(unittest.TestCase):
                     self.assertTrue(file.is_file(), target)
         self.assertTrue((ROOT / '.nojekyll').is_file())
         self.assertTrue((ROOT / '404.html').is_file())
+
+    def test_previous_project_urls_redirect_to_root(self):
+        for route in ['', 'about', 'contact', 'projects/warehouse-management-system']:
+            html = (ROOT / 'portfolio' / route / 'index.html').read_text(encoding='utf-8')
+            target = ORIGIN + '/' + (route + '/' if route else '')
+            self.assertIn('http-equiv="refresh"', html)
+            self.assertIn('url=' + target, html)
+            self.assertIn('rel="canonical" href="' + target + '"', html)
 
     def test_contact_uses_existing_working_service(self):
         html = (ROOT / 'contact/index.html').read_text(encoding='utf-8')

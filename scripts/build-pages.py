@@ -17,8 +17,8 @@ from urllib.request import urlopen
 from urllib.error import HTTPError
 
 ROOT = Path(__file__).resolve().parents[1]
-ORIGIN = 'https://krunal02101999.github.io'
-BASE = '/portfolio'
+ORIGIN = 'https://krunalpawar-dev.github.io'
+BASE = ''
 PUBLIC = ORIGIN + BASE
 FORM = 'https://formspree.io/f/xdkeodjk'  # Same endpoint as the original live portfolio.
 
@@ -75,6 +75,17 @@ def build():
                     destination = ROOT / route.strip('/') / 'index.html' if route != '/' else ROOT / 'index.html'
                     destination.parent.mkdir(parents=True, exist_ok=True)
                     destination.write_text(html, encoding='utf-8', newline='\n')
+                    # Preserve links shared under the previous project-site path.
+                    legacy = ROOT / 'portfolio' / route.strip('/') / 'index.html'
+                    legacy.parent.mkdir(parents=True, exist_ok=True)
+                    target = PUBLIC + route.rstrip('/') + '/'
+                    redirect = ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
+                                '<meta name="viewport" content="width=device-width, initial-scale=1">'
+                                f'<meta http-equiv="refresh" content="0;url={target}">'
+                                f'<link rel="canonical" href="{target}"><title>Portfolio moved | Krunal Pawar</title>'
+                                '</head><body><p>This page has moved. '
+                                f'<a href="{target}">Continue to Krunal Pawar’s portfolio</a>.</p></body></html>')
+                    legacy.write_text(redirect, encoding='utf-8', newline='\n')
                 try:
                     urlopen(local + '/missing-page')
                     raise RuntimeError('Missing page must return 404.')

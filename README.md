@@ -4,7 +4,7 @@ A responsive, server-rendered PHP portfolio, extending the existing static proje
 
 ## Live GitHub Pages website
 
-The existing public site is hosted at **https://krunal02101999.github.io/portfolio/**. GitHub Pages serves the committed static `index.html` and directory pages. `.nojekyll` prevents the README from becoming the homepage. Every asset, navigation link, canonical URL and sitemap entry includes the `/portfolio/` base path.
+The existing public site is hosted at **https://krunalpawar-dev.github.io/**. GitHub Pages serves the committed static `index.html` and directory pages. `.nojekyll` prevents the README from becoming the homepage. The repository is `krunalpawar-dev.github.io`, so the site is published at the domain root. Assets, navigation, canonical URLs and sitemap entries use that root. Do not restore the old `/portfolio/` prefix.
 
 Regenerate the public pages after changing templates or `app/content.json`:
 
