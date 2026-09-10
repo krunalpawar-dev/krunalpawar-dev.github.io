@@ -104,7 +104,7 @@ test('contact preselection and branded submission confirmation remain functional
   form.elements.name.value = 'Test Name';
   form.elements.email.value = 'test@example.test';
   form.elements.description.value = 'An isolated navigation test. This is never sent.';
-  form.elements.consent.checked = true;
+  form.elements.phone.value = '+919000000001';
   assert.equal(form.checkValidity(), true);
   const event = new f.w.Event('submit', {bubbles: true, cancelable: true});
   let posted;

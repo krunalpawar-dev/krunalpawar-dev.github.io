@@ -15,15 +15,14 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
  if(!throttle('contact:'.($_SERVER['REMOTE_ADDR']??'unknown'),5,3600)){$errors[]='Too many enquiries have been submitted. Please try again in an hour or contact me by email.';http_response_code(429);}
  if($old['website']!=='')$errors[]='Unable to submit this enquiry. Please contact me by email.';
  if(mb_strlen($old['name'])<2||mb_strlen($old['name'])>100)$errors[]='Please enter your name (2–100 characters).';
- if(!filter_var($old['email'],FILTER_VALIDATE_EMAIL)||strlen($old['email'])>254||preg_match('/[\r\n]/',$old['email']))$errors[]='Please enter a valid email address.';
+ if($old['email']!==''&&(!filter_var($old['email'],FILTER_VALIDATE_EMAIL)||strlen($old['email'])>254||preg_match('/[\r\n]/',$old['email'])))$errors[]='Please enter a valid email address.';
  if(mb_strlen($old['company'])>150)$errors[]='Company name must be 150 characters or fewer.';
- if($old['phone']!==''&&!preg_match('/^\+?[0-9 ()\-.]{7,30}$/',$old['phone']))$errors[]='Please enter a valid phone number, including your country code.';
- if(!in_array($old['project_type'],$types,true))$errors[]='Please choose a project type.';
- if(!in_array($old['budget'],$budgets,true))$errors[]='Please choose a budget range.';
- if(mb_strlen($old['description'])<20||mb_strlen($old['description'])>10000)$errors[]='Please describe your project in 20–10,000 characters.';
- if(!in_array($old['contact_method'],$methods,true))$errors[]='Please choose a preferred contact method.';
+ if(!preg_match('/^\+?[0-9 ()\-.]{7,30}$/',$old['phone']))$errors[]='Please enter a valid phone number, including your country code.';
+ if($old['project_type']!==''&&!in_array($old['project_type'],$types,true))$errors[]='Please choose a project type.';
+ if($old['budget']!==''&&!in_array($old['budget'],$budgets,true))$errors[]='Please choose a budget range.';
+ if(mb_strlen($old['description'])>10000)$errors[]='Please keep your project description within 10,000 characters.';
+ if($old['contact_method']!==''&&!in_array($old['contact_method'],$methods,true))$errors[]='Please choose a preferred contact method.';
  if(in_array($old['contact_method'],['Phone','WhatsApp'])&&$old['phone']==='')$errors[]='Please provide a phone number for your preferred contact method.';
- if(($_POST['consent']??'')!=='yes')$errors[]='Please agree to the use of your information to respond to this enquiry.';
  if(!$errors){
   try{
    $values=array_intersect_key($old,array_flip(['name','company','email','phone','project_type','budget','description','contact_method']));

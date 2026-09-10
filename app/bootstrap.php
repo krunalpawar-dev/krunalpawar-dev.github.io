@@ -51,7 +51,9 @@ function send_lead_email(array $lead): bool {
     if (!$config['mail_enabled'] || !filter_var($config['mail_from'], FILTER_VALIDATE_EMAIL)) return false;
     $body="New project enquiry #".$lead['id']."\n\n";
     foreach (['name','company','email','phone','project_type','budget','description','contact_method'] as $key) $body.=ucwords(str_replace('_',' ',$key)).': '.$lead[$key]."\n\n";
-    return @mail($config['email'], 'New portfolio project enquiry #'.$lead['id'], $body, ['From'=>$config['mail_from'],'Reply-To'=>$lead['email'],'Content-Type'=>'text/plain; charset=UTF-8']);
+    $headers=['From'=>$config['mail_from'],'Content-Type'=>'text/plain; charset=UTF-8'];
+    if (!empty($lead['email'])) $headers['Reply-To']=$lead['email'];
+    return @mail($config['email'], 'New portfolio project enquiry #'.$lead['id'], $body, $headers);
 }
 function project_visual(array $p): void {
     if (!empty($p['screenshots'])) {

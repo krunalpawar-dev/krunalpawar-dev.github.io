@@ -102,7 +102,7 @@ class SiteTests(unittest.TestCase):
         return html
 
     def enquiry(self, token):
-        return {'csrf': token, 'name': 'Integration Test', 'company': 'Test company', 'email': 'nobody@example.test', 'phone': '', 'project_type': 'CRM', 'budget': 'Let’s discuss', 'description': 'A test CRM enquiry used only by the isolated integration suite.', 'contact_method': 'Email', 'consent': 'yes', 'website': ''}
+        return {'csrf': token, 'name': 'Integration Test', 'company': 'Test company', 'email': 'nobody@example.test', 'phone': '+919000000001', 'project_type': 'CRM', 'budget': 'Let’s discuss', 'description': 'A test CRM enquiry used only by the isolated integration suite.', 'contact_method': 'Email', 'consent': 'yes', 'website': ''}
 
     def test_public_routes_metadata_links_and_sitemap(self):
         routes = ['/', '/about', '/services', '/projects', '/technologies', '/blog', '/contact', '/privacy']
@@ -169,6 +169,14 @@ class SiteTests(unittest.TestCase):
         _, html, _ = self.request('/contact?service=crm-development')
         self.assertIn('<option value="CRM" selected>Customers, sales &amp; follow-ups</option>', html)
 
+    def test_enquiry_with_only_name_and_phone(self):
+        _, html, _ = self.request('/contact')
+        status, html, _ = self.request('/contact', {'csrf': self.csrf(html), 'name': 'Test Person', 'phone': '+919000000001'})
+        self.assertEqual(status, 200)
+        self.assertIn('Your enquiry is in.', html)
+        with self.db() as db:
+            self.assertEqual(db.execute('SELECT name,phone,email,description FROM leads').fetchone(), ('Test Person', '+919000000001', '', ''))
+
     def test_enquiry_persistence_and_replay(self):
         _, html, headers = self.request('/contact')
         self.assertEqual(headers.get('Cache-Control'), 'no-store')
@@ -189,7 +197,7 @@ class SiteTests(unittest.TestCase):
     def test_enquiry_validation_csrf_and_rate_limit(self):
         _, html, _ = self.request('/contact')
         token = self.csrf(html)
-        for mutation in [{'email': 'not-an-email'}, {'csrf': 'forged'}, {'description': 'short'}, {'contact_method': 'Phone', 'phone': ''}, {'consent': ''}]:
+        for mutation in [{'email': 'not-an-email'}, {'csrf': 'forged'}, {'description': 'x' * 10001}, {'contact_method': 'Phone', 'phone': ''}, {'name': ''}]:
             data = self.enquiry(token); data.update(mutation)
             status, _, _ = self.request('/contact', data)
             self.assertEqual(status, 422)
