@@ -50,7 +50,7 @@
     const selectedService = serviceTypes[params.get('service')];
     if (inquiry && selectedService) inquiry.elements.project_type.value = selectedService;
     const submit = inquiry?.querySelector('[type=submit]');
-    if (submit?.disabled) {
+    if (submit?.disabled && !inquiry.dataset.sending) {
       submit.disabled = false;
       submit.textContent = 'Request a free consultation';
     }
@@ -78,10 +78,62 @@
     }
   });
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
-  document.addEventListener('submit', event => {
+  document.addEventListener('submit', async event => {
     const form = event.target;
     if (form.matches('[data-confirm-delete]') && !confirm('Delete this content record? This cannot be undone.')) event.preventDefault();
     if (form.id === 'inquiry-form' && form.checkValidity()) {
+      const hostedForm = new URL(form.action).origin === 'https://formspree.io';
+      if (hostedForm && window.fetch && window.AbortController) {
+        event.preventDefault();
+        if (form.dataset.sending) return;
+        form.dataset.sending = 'true';
+        const button = form.querySelector('[type=submit]');
+        const label = button.textContent;
+        button.disabled = true;
+        button.textContent = 'Sending your enquiry…';
+        let status = form.querySelector('[data-submit-status]');
+        if (!status) {
+          status = document.createElement('p');
+          status.dataset.submitStatus = '';
+          status.setAttribute('role', 'alert');
+          status.tabIndex = -1;
+          form.append(status);
+        }
+        status.textContent = '';
+        const request = new AbortController();
+        const timeout = window.setTimeout(() => request.abort(), 20000);
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST', body: new FormData(form), headers: {Accept: 'application/json'}, signal: request.signal
+          });
+          const result = await response.json();
+          if (!response.ok || result.ok === false || result.errors) {
+            status.textContent = 'Your enquiry could not be submitted. Please check your details and try again, or contact me by email or WhatsApp.';
+            if (form.isConnected) status.focus();
+            return;
+          }
+          const confirmation = document.createElement('section');
+          confirmation.className = 'success-panel';
+          confirmation.setAttribute('role', 'status');
+          confirmation.tabIndex = -1;
+          confirmation.innerHTML = '<span class="eyebrow">ENQUIRY SENT</span><h2>Thank you for getting in touch.</h2><p>Your enquiry has been sent successfully. I’ll review your requirements and get back to you using the contact details you provided.</p><p>In the meantime, you can explore the services I offer or return to the homepage.</p><div class="button-row"><a class="button" href="/services/">Explore services ↗</a><a class="button secondary" href="/">Back to home</a></div>';
+          form.reset();
+          form.replaceWith(confirmation);
+          if (confirmation.isConnected) {
+            confirmation.focus();
+            confirmation.scrollIntoView({block: 'center', behavior: 'smooth'});
+          }
+        } catch {
+          status.textContent = 'We couldn’t confirm whether your enquiry was sent. Your details are still here. Please check your connection and try again, or contact me by email or WhatsApp.';
+          if (form.isConnected) status.focus();
+        } finally {
+          window.clearTimeout(timeout);
+          delete form.dataset.sending;
+          button.disabled = false;
+          button.textContent = label;
+        }
+        return;
+      }
       const button = form.querySelector('[type=submit]');
       button.disabled = true;
       button.textContent = 'Sending your enquiry…';

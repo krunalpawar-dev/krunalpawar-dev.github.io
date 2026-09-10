@@ -95,7 +95,7 @@ test('filters and mobile menu work after repeated page swaps; back restores filt
   assert.equal(f.w.document.querySelector('.menu-toggle').getAttribute('aria-expanded'), 'false');
 });
 
-test('contact preselection and normal form submissions remain functional', async t => {
+test('contact preselection and branded submission confirmation remain functional', async t => {
   const f = await fixture(t, '/services/crm-development/');
   const ready = f.loaded(); f.click('a[href="/contact/?service=crm-development"]'); await ready;
   const form = f.w.document.querySelector('#inquiry-form');
@@ -107,11 +107,18 @@ test('contact preselection and normal form submissions remain functional', async
   form.elements.consent.checked = true;
   assert.equal(form.checkValidity(), true);
   const event = new f.w.Event('submit', {bubbles: true, cancelable: true});
-  form.dispatchEvent(event); // No actual submit or network request.
-  assert.equal(event.defaultPrevented, false);
+  let posted;
+  f.w.fetch = async (url, options) => { posted = {url, options}; return {ok: true, json: async () => ({ok: true})}; };
+  form.dispatchEvent(event); // Mocked request; nothing is sent externally.
+  assert.equal(event.defaultPrevented, true);
   assert.equal(form.querySelector('[type=submit]').disabled, true);
-  f.w.dispatchEvent(new f.w.Event('pageshow'));
-  assert.equal(form.querySelector('[type=submit]').disabled, false);
+  await tick();
+  assert.equal(posted.options.method, 'POST');
+  assert.equal(posted.options.headers.Accept, 'application/json');
+  assert.equal(posted.options.body.get('email'), 'test@example.test');
+  assert.match(f.w.document.querySelector('.success-panel').textContent, /Thank you for getting in touch/);
+  assert.equal(f.w.location.pathname, '/contact/');
+  assert.equal(f.w.document.querySelector('#inquiry-form'), null);
   assert.equal(f.requests.length, 1);
 });
 
@@ -159,3 +166,23 @@ test('failed requests and incompatible HTML fall back to native navigation', asy
     assert.ok(f.errors.some(error => /navigation/.test(error.message)), mode);
   }
 });
+
+for (const outcome of ['validation', 'network']) {
+  test(`failed ${outcome} submission preserves details and allows retry`, async t => {
+    const f = await fixture(t, '/contact/');
+    const form = f.w.document.querySelector('#inquiry-form');
+    form.checkValidity = () => true;
+    form.elements.email.value = 'test@example.test';
+    let attempts = 0;
+    let finish;
+    f.w.fetch = () => { attempts++; return new Promise((resolve, reject) => { finish = () => outcome === 'network' ? reject(new Error('offline')) : resolve({ok: false, json: async () => ({errors: [{message: 'invalid'}]})}); }); };
+    form.dispatchEvent(new f.w.Event('submit', {bubbles: true, cancelable: true}));
+    form.dispatchEvent(new f.w.Event('submit', {bubbles: true, cancelable: true}));
+    assert.equal(attempts, 1);
+    finish(); await tick();
+    assert.equal(form.elements.email.value, 'test@example.test');
+    assert.equal(form.querySelector('[type=submit]').disabled, false);
+    assert.ok(form.querySelector('[data-submit-status]').textContent.length > 0);
+    assert.equal(f.w.document.querySelector('.success-panel'), null);
+  });
+}
