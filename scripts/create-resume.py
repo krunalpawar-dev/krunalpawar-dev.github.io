@@ -33,7 +33,7 @@ text('<link href="mailto:kmpawar0004@gmail.com">kmpawar0004@gmail.com</link> | +
 text('<link href="https://krunalpawar-dev.github.io/">krunalpawar-dev.github.io</link> | <link href="https://www.linkedin.com/in/krunal-pawar-dev">LinkedIn: krunal-pawar-dev</link>', 'contact')
 story.extend([Spacer(1, 15), HRFlowable(width='100%', thickness=1, color=colors.HexColor('#dce2ef'))])
 text('PROFILE', 'section')
-text('Software developer with around 3 years of professional experience building custom web applications and business management systems. Work spans backend development, user interfaces, databases, APIs and deployment.')
+text('Software developer working professionally since 2022, building custom web applications and business management systems. Work spans backend development, user interfaces, databases, APIs and deployment.')
 text('TECHNICAL SKILLS', 'section')
 text('<b>Backend &amp; data:</b> Laravel, PHP, MySQL, REST APIs, Redis and queues.')
 text('<b>Frontend:</b> Vue.js, JavaScript, jQuery, Livewire, Inertia.js, Tailwind CSS, Bootstrap and Vite.')

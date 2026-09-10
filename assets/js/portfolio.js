@@ -25,7 +25,22 @@
     if (status) status.textContent = count ? `${count} ${count === 1 ? 'result' : 'results'}` : 'No entries in this category yet. Explore another category.';
   }
 
+  function updateExperience() {
+    const year = Number(new Intl.DateTimeFormat('en', {year: 'numeric', timeZone: 'Asia/Kolkata'}).format(new Date()));
+    document.querySelectorAll('[data-experience-since]').forEach(element => {
+      const years = Math.max(0, year - Number(element.dataset.experienceSince));
+      const duration = `${years} ${years === 1 ? 'year' : 'years'}`;
+      element.textContent = element.dataset.experienceFormat === 'count' ? `~${years}`
+        : element.dataset.experienceFormat === 'duration' ? `around ${duration} of professional experience`
+        : `Around ${duration} of professional development experience.`;
+    });
+  }
+  // Also update tabs left open across the start of a new year.
+  window.setInterval(updateExperience, 60000);
+  document.addEventListener('visibilitychange', updateExperience);
+
   function initializePage() {
+    updateExperience();
     const params = new URLSearchParams(location.search);
     document.querySelectorAll('[data-filter-form]').forEach(form => {
       const value = params.get('category') || 'All';
