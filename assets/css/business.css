@@ -26,3 +26,21 @@ body.page-loading:before{content:'';position:fixed;z-index:100;top:0;left:0;heig
 }
 
 .hero-proof .mini-portrait img { filter: none; }
+
+/* Compact header, with the mobile menu aligned to its lower edge. */
+.site-header .nav-wrap { height: 76px; }
+.site-header .monogram { width: 38px; height: 38px; font-size: 32px; border-radius: 10px; }
+.site-header .nav-cta { min-height: 40px; padding: 9px 17px; }
+@media (min-width: 681px) {
+  .site-header .nav-wrap nav a { padding-block: 24px; }
+  .site-header .nav-wrap nav a[aria-current]:after { bottom: 13px; }
+}
+@media (max-width: 850px) {
+  .site-header .nav-wrap { height: 68px; }
+  .site-header .monogram { width: 35px; height: 35px; font-size: 30px; }
+}
+@media (max-width: 680px) {
+  .site-header .nav-wrap { height: 64px; }
+  .site-header .nav-wrap nav { top: 64px; }
+  .site-header .nav-cta { min-height: 38px; padding: 8px 11px; }
+}
