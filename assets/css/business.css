@@ -24,3 +24,5 @@ body.page-loading:before{content:'';position:fixed;z-index:100;top:0;left:0;heig
 @media (min-width: 900px) {
   .project-grid > .project-card:only-child { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
 }
+
+.hero-proof .mini-portrait img { filter: none; }
