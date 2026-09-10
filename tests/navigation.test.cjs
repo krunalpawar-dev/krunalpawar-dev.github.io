@@ -117,6 +117,11 @@ test('contact preselection and normal form submissions remain functional', async
 
 test('downloads, external links, modified clicks and anchors are not intercepted', async t => {
   const f = await fixture(t, '/about/');
+  assert.equal(f.click('a[href^="https://drive.google.com/file/"]').defaultPrevented, false);
+  const download = f.w.document.createElement('a');
+  download.href = '/assets/img/krunal-pawar-portrait.webp';
+  download.download = 'portrait.webp';
+  f.w.document.body.append(download);
   assert.equal(f.click('a[download]').defaultPrevented, false);
   assert.equal(f.click('a[href^="https://www.linkedin.com"]').defaultPrevented, false);
   assert.equal(f.click('#main-nav a[href="/projects/"]', {ctrlKey: true}).defaultPrevented, false);
