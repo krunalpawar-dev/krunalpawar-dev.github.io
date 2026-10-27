@@ -99,6 +99,26 @@ class PagesTests(unittest.TestCase):
             page = (ROOT / 'projects' / project['slug'] / 'index.html').read_text(encoding='utf-8')
             self.assertIn('CONCEPT PROJECT', page)
             self.assertIn('not presented as commissioned client work', page)
+        expected_order = [
+            'treeva-healthcare-management-system',
+            'finserv-crm-business-management-platform',
+            'bharat-medical-backoffice-management-system',
+            'ds-shoppy-ecommerce-rewards-platform',
+            'kumbhsnaan-digital-ritual-booking-platform',
+            'sterile-aircare-solutions-corporate-website',
+            'kakubaa-student-support-website',
+            'electronics-ecommerce-storefront',
+            'smartstock-multi-warehouse-management-concept',
+            'peopleflow-hrms-payroll-concept',
+            'staypilot-property-management-saas-concept',
+            'tradehub-b2b-dealer-portal-concept',
+        ]
+        listing = (ROOT / 'projects' / 'index.html').read_text(encoding='utf-8')
+        self.assertEqual(sorted(expected_order, key=listing.index), expected_order)
+        home = (ROOT / 'index.html').read_text(encoding='utf-8')
+        for slug in expected_order[:6]:
+            self.assertIn(f'/projects/{slug}/', home)
+        self.assertNotIn(f'/projects/{expected_order[6]}/', home)
         for slug in ['education-management-saas',
                      'crm-business-management-platform', 'hrms-payroll-system', 'warehouse-management-system']:
             for prefix in ['', 'portfolio/']:

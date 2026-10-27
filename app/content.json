@@ -2,6 +2,7 @@
   "projects": [
     {
       "slug": "bharat-medical-backoffice-management-system",
+      "weight": 110,
       "title": "Bharat Medical Hall – Back Office & Business Management System",
       "short": "Bharat Medical Hall",
       "theme": "medical",
@@ -45,6 +46,7 @@
     },
     {
       "slug": "kumbhsnaan-digital-ritual-booking-platform",
+      "weight": 95,
       "title": "KumbhSnaan – Digital Gateway to Nashik Simhastha Kumbh",
       "short": "KumbhSnaan",
       "theme": "spiritual",
@@ -87,6 +89,7 @@
     },
     {
       "slug": "treeva-healthcare-management-system",
+      "weight": 120,
       "title": "Treeva Healthcare – Healthcare Website & Clinic Management System",
       "short": "Treeva Healthcare",
       "theme": "treeva",
@@ -151,6 +154,7 @@
     },
     {
       "slug": "finserv-crm-business-management-platform",
+      "weight": 115,
       "title": "FinServ CRM – Customer & Business Management Platform",
       "short": "FinServ CRM",
       "theme": "crm",
@@ -206,6 +210,7 @@
     },
     {
       "slug": "ds-shoppy-ecommerce-rewards-platform",
+      "weight": 105,
       "title": "DS Shoppy – E-commerce & Rewards Platform",
       "short": "DS Shoppy",
       "theme": "commerce",
@@ -261,6 +266,7 @@
     },
     {
       "slug": "electronics-ecommerce-storefront",
+      "weight": 80,
       "title": "Electronics Store – Product Discovery E-commerce Website",
       "short": "Electronics Store",
       "theme": "commerce",
@@ -314,6 +320,7 @@
     },
     {
       "slug": "kakubaa-student-support-website",
+      "weight": 85,
       "title": "Kakubaa – Student Support & Guidance Website",
       "short": "Kakubaa",
       "theme": "education",
@@ -365,6 +372,7 @@
     },
     {
       "slug": "sterile-aircare-solutions-corporate-website",
+      "weight": 90,
       "title": "Sterile Aircare Solutions – Corporate Product Website",
       "short": "Sterile Aircare",
       "theme": "industrial",
@@ -416,6 +424,7 @@
     },
     {
       "slug": "smartstock-multi-warehouse-management-concept",
+      "weight": 70,
       "title": "SmartStock – Multi-Warehouse Inventory Platform",
       "short": "SmartStock",
       "theme": "warehouse",
@@ -468,6 +477,7 @@
     },
     {
       "slug": "peopleflow-hrms-payroll-concept",
+      "weight": 65,
       "title": "PeopleFlow – HRMS, Attendance & Payroll Platform",
       "short": "PeopleFlow",
       "theme": "hrms",
@@ -520,6 +530,7 @@
     },
     {
       "slug": "staypilot-property-management-saas-concept",
+      "weight": 60,
       "title": "StayPilot – Property Management SaaS",
       "short": "StayPilot",
       "theme": "education",
@@ -572,6 +583,7 @@
     },
     {
       "slug": "tradehub-b2b-dealer-portal-concept",
+      "weight": 55,
       "title": "TradeHub – B2B Dealer Ordering Portal",
       "short": "TradeHub",
       "theme": "crm",
