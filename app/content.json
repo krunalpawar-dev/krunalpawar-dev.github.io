@@ -455,7 +455,14 @@
         "Vue.js",
         "REST APIs"
       ],
-      "screenshots": [],
+      "screenshots": [
+        {
+          "src": "/assets/img/portfolio/concepts/smartstock-dashboard.png",
+          "width": 1672,
+          "height": 941,
+          "alt": "Generated SmartStock concept mockup showing multi-warehouse inventory, stock movements and low-stock alerts."
+        }
+      ],
       "concept": true,
       "published": true
     },
@@ -500,7 +507,14 @@
         "Livewire",
         "REST APIs"
       ],
-      "screenshots": [],
+      "screenshots": [
+        {
+          "src": "/assets/img/portfolio/concepts/peopleflow-dashboard.png",
+          "width": 1672,
+          "height": 941,
+          "alt": "Generated PeopleFlow concept mockup showing attendance, leave approvals and payroll readiness."
+        }
+      ],
       "concept": true,
       "published": true
     },
@@ -545,7 +559,14 @@
         "Vue.js",
         "Redis"
       ],
-      "screenshots": [],
+      "screenshots": [
+        {
+          "src": "/assets/img/portfolio/concepts/staypilot-dashboard.png",
+          "width": 1672,
+          "height": 941,
+          "alt": "Generated StayPilot concept mockup showing occupancy, collections, reservations and maintenance requests."
+        }
+      ],
       "concept": true,
       "published": true
     },
@@ -590,7 +611,14 @@
         "Vue.js",
         "REST APIs"
       ],
-      "screenshots": [],
+      "screenshots": [
+        {
+          "src": "/assets/img/portfolio/concepts/tradehub-dashboard.png",
+          "width": 1672,
+          "height": 941,
+          "alt": "Generated TradeHub concept mockup showing dealer credit, quick ordering, quotations and delivery status."
+        }
+      ],
       "concept": true,
       "published": true
     }

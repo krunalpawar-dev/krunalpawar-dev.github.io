@@ -93,6 +93,9 @@ class PagesTests(unittest.TestCase):
         concepts = [p for p in content['projects'] if p.get('concept')]
         self.assertEqual(len(concepts), 4)
         for project in concepts:
+            self.assertEqual(len(project['screenshots']), 1)
+            self.assertEqual(project['screenshots'][0]['width'], 1672)
+            self.assertTrue((ROOT / project['screenshots'][0]['src'].lstrip('/')).is_file())
             page = (ROOT / 'projects' / project['slug'] / 'index.html').read_text(encoding='utf-8')
             self.assertIn('CONCEPT PROJECT', page)
             self.assertIn('not presented as commissioned client work', page)

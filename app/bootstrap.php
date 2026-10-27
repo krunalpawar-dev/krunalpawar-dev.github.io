@@ -58,7 +58,8 @@ function send_lead_email(array $lead): bool {
 function project_visual(array $p): void {
     if (!empty($p['screenshots'])) {
         $shot=$p['screenshots'][0];
-        echo '<div class="project-preview"><img src="'.e($shot['src']).'" alt="'.e($shot['alt']).'" width="1400" height="594" loading="lazy" decoding="async"></div>';
+        $width=(int)($shot['width']??1400); $height=(int)($shot['height']??594);
+        echo '<div class="project-preview"><img src="'.e($shot['src']).'" alt="'.e($shot['alt']).'" width="'.$width.'" height="'.$height.'" loading="lazy" decoding="async"></div>';
         return;
     }
     $themes=['medical'=>'Healthcare operations','treeva'=>'Connected patient care','education'=>'One platform. Many organizations.','crm'=>'A clearer customer journey','hrms'=>'People. Policies. Payroll.','warehouse'=>'Every movement, connected.'];
