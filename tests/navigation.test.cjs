@@ -80,13 +80,13 @@ test('filters and mobile menu work after repeated page swaps; back restores filt
   let ready = f.loaded(); f.click('#main-nav a[href="/projects/"]'); await ready;
   f.click('[data-filter="HRMS"]');
   assert.equal(f.w.location.search, '?category=HRMS');
-  assert.equal(f.w.document.querySelectorAll('.project-card:not([hidden])').length, 1);
+  assert.equal(f.w.document.querySelectorAll('.project-card:not([hidden])').length, 2);
   f.w.scrollTo({left: 0, top: 420});
   f.w.dispatchEvent(new f.w.Event('scroll')); await tick();
   ready = f.loaded(); f.click('#main-nav a[href="/about/"]'); await ready;
   ready = f.loaded(); f.w.history.back(); await ready;
   assert.equal(f.w.location.search, '?category=HRMS');
-  assert.equal(f.w.document.querySelectorAll('.project-card:not([hidden])').length, 1);
+  assert.equal(f.w.document.querySelectorAll('.project-card:not([hidden])').length, 2);
   assert.equal(f.w.scrollY, 420);
   f.click('.menu-toggle');
   assert.equal(f.w.document.querySelector('.menu-toggle').getAttribute('aria-expanded'), 'true');

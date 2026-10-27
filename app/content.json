@@ -413,6 +413,186 @@
         }
       ],
       "published": true
+    },
+    {
+      "slug": "smartstock-multi-warehouse-management-concept",
+      "title": "SmartStock – Multi-Warehouse Inventory Platform",
+      "short": "SmartStock",
+      "theme": "warehouse",
+      "icon": "layers",
+      "industry": "Retail, distribution & warehousing",
+      "categories": [
+        "Laravel",
+        "ERP",
+        "Inventory",
+        "Concept"
+      ],
+      "description": "A concept for multi-location businesses that need a clearer view of stock, purchasing, transfers and fulfilment.",
+      "features": [
+        "Live stock by warehouse and location",
+        "Purchase orders and goods receiving",
+        "Sales orders and dispatch planning",
+        "Inter-warehouse stock transfers",
+        "Barcode-led receiving and picking",
+        "Low-stock and reorder alerts",
+        "Supplier and product management",
+        "Stock movement history and reports"
+      ],
+      "problem": "Growing distributors often manage stock through separate spreadsheets, calls and branch-level records. That makes it difficult to know what is available, what is already committed and where replenishment is needed.",
+      "solution": "The SmartStock concept connects purchasing, receiving, storage, transfers, sales orders and dispatch around a traceable stock ledger. Role-based dashboards would give branch teams a focused workflow while management sees inventory across every location.",
+      "contribution": "I designed this concept case study to demonstrate how I would structure multi-warehouse inventory, operational permissions and traceable stock movements in a custom Laravel application.",
+      "impact": "A system like this could reduce duplicate entry, make stock discrepancies easier to investigate and help teams plan purchasing and fulfilment from a shared operational view.",
+      "related_services": [
+        "inventory-management-system-development",
+        "warehouse-management-system-development",
+        "erp-development"
+      ],
+      "architecture": "Multi-location inventory workflows",
+      "technologies": [
+        "Laravel",
+        "PHP",
+        "MySQL",
+        "Vue.js",
+        "REST APIs"
+      ],
+      "screenshots": [],
+      "concept": true,
+      "published": true
+    },
+    {
+      "slug": "peopleflow-hrms-payroll-concept",
+      "title": "PeopleFlow – HRMS, Attendance & Payroll Platform",
+      "short": "PeopleFlow",
+      "theme": "hrms",
+      "icon": "grid",
+      "industry": "Human resources · Growing teams",
+      "categories": [
+        "Laravel",
+        "HRMS",
+        "SaaS",
+        "Concept"
+      ],
+      "description": "A concept HR platform connecting employee records, attendance exceptions, leave approvals and reviewable payroll runs.",
+      "features": [
+        "Employee records and onboarding",
+        "Biometric attendance integration",
+        "Shift and roster management",
+        "Leave, holidays and comp-off workflows",
+        "Timesheets and manager approvals",
+        "Salary structures and payroll runs",
+        "Payslips and employee self-service",
+        "Role-based reports and audit history"
+      ],
+      "problem": "Attendance devices, leave requests, salary spreadsheets and employee documents often live in separate places. HR teams then spend time reconciling exceptions before every payroll run.",
+      "solution": "The PeopleFlow concept creates one reviewable path from employee and shift data through attendance, leave approvals and payroll. Exception queues would help HR resolve missing punches or policy conflicts before salary calculations are finalized.",
+      "contribution": "I designed this concept to show how policy-driven HR workflows, sensitive permissions and payroll review could be translated into a maintainable multi-tenant Laravel product.",
+      "impact": "A platform like this could give employees more self-service access, help managers respond to requests faster and make payroll inputs easier for HR teams to verify.",
+      "related_services": [
+        "hrms-development",
+        "saas-development",
+        "api-development-integration"
+      ],
+      "architecture": "Policy-driven HR SaaS",
+      "technologies": [
+        "Laravel",
+        "PHP",
+        "MySQL",
+        "Livewire",
+        "REST APIs"
+      ],
+      "screenshots": [],
+      "concept": true,
+      "published": true
+    },
+    {
+      "slug": "staypilot-property-management-saas-concept",
+      "title": "StayPilot – Property Management SaaS",
+      "short": "StayPilot",
+      "theme": "education",
+      "icon": "layers",
+      "industry": "Property rentals & hospitality",
+      "categories": [
+        "Laravel",
+        "SaaS",
+        "CRM",
+        "Concept"
+      ],
+      "description": "A concept SaaS workspace for property enquiries, bookings, tenants, payments, maintenance and owner reporting.",
+      "features": [
+        "Property and unit management",
+        "Lead and enquiry pipeline",
+        "Booking and occupancy calendar",
+        "Tenant profiles and agreements",
+        "Rent, deposits and payment tracking",
+        "Maintenance requests and assignments",
+        "Owner dashboards and statements",
+        "Multi-organization administration"
+      ],
+      "problem": "Property managers can lose visibility when leads, booking calendars, tenant records, maintenance requests and payment follow-ups are handled in different tools.",
+      "solution": "The StayPilot concept brings the customer journey and property operations together. A shared calendar would connect availability and bookings, while tenant, payment and maintenance records stay attached to the relevant unit and organization.",
+      "contribution": "I designed this concept to demonstrate a multi-tenant SaaS architecture, role-based property operations and a joined-up workflow from initial enquiry through ongoing tenancy.",
+      "impact": "A product like this could help property teams respond to enquiries sooner, reduce scheduling conflicts and give owners a clearer view of occupancy, collections and open maintenance work.",
+      "related_services": [
+        "saas-development",
+        "crm-development",
+        "custom-web-application-development"
+      ],
+      "architecture": "Multi-tenant property operations",
+      "technologies": [
+        "Laravel",
+        "PHP",
+        "MySQL",
+        "Vue.js",
+        "Redis"
+      ],
+      "screenshots": [],
+      "concept": true,
+      "published": true
+    },
+    {
+      "slug": "tradehub-b2b-dealer-portal-concept",
+      "title": "TradeHub – B2B Dealer Ordering Portal",
+      "short": "TradeHub",
+      "theme": "crm",
+      "icon": "grid",
+      "industry": "Manufacturing & wholesale distribution",
+      "categories": [
+        "Laravel",
+        "E-commerce",
+        "ERP",
+        "Concept"
+      ],
+      "description": "A concept dealer portal for product pricing, bulk orders, approvals, credit visibility and repeat purchasing.",
+      "features": [
+        "Dealer-specific catalogues and pricing",
+        "Bulk order and quick reorder tools",
+        "Quotation and approval workflows",
+        "Credit-limit and outstanding visibility",
+        "Order status and delivery tracking",
+        "Invoices, statements and document access",
+        "Sales representative dashboards",
+        "ERP and payment integrations"
+      ],
+      "problem": "Manufacturers and wholesalers often receive dealer orders through calls, messages and spreadsheets. Custom pricing, credit checks and approval rules then create extra work before an order can be confirmed.",
+      "solution": "The TradeHub concept gives each dealer a secure ordering workspace with the right catalogue, negotiated pricing and account information. Orders could move through credit and approval checks before connecting to fulfilment and invoicing systems.",
+      "contribution": "I designed this concept to demonstrate how e-commerce convenience can be combined with B2B pricing, permissions, approval workflows and ERP integration requirements.",
+      "impact": "A portal like this could make repeat ordering faster, reduce manual order entry and give dealers and sales teams a shared view of prices, availability and account status.",
+      "related_services": [
+        "custom-web-application-development",
+        "erp-development",
+        "api-development-integration"
+      ],
+      "architecture": "B2B commerce + approval workflows",
+      "technologies": [
+        "Laravel",
+        "PHP",
+        "MySQL",
+        "Vue.js",
+        "REST APIs"
+      ],
+      "screenshots": [],
+      "concept": true,
+      "published": true
     }
   ],
   "services": [
@@ -1010,6 +1190,21 @@
     {
       "slug": "education",
       "title": "Education",
+      "published": true
+    },
+    {
+      "slug": "inventory",
+      "title": "Inventory",
+      "published": true
+    },
+    {
+      "slug": "saas",
+      "title": "SaaS",
+      "published": true
+    },
+    {
+      "slug": "concept",
+      "title": "Concept",
       "published": true
     }
   ],

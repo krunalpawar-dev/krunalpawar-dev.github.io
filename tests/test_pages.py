@@ -30,7 +30,7 @@ class PagesTests(unittest.TestCase):
     def test_all_public_pages_and_links(self):
         sitemap = ET.parse(ROOT / 'sitemap.xml')
         urls = [el.text for el in sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-        self.assertEqual(len(urls), 34)
+        self.assertEqual(len(urls), 38)
         for url in urls:
             with self.subTest(url=url):
                 self.assertTrue(url.startswith(ORIGIN + BASE + '/'))
@@ -62,7 +62,7 @@ class PagesTests(unittest.TestCase):
     def test_project_case_studies_are_published(self):
         import json
         content = json.loads((ROOT / 'app/content.json').read_text(encoding='utf-8'))
-        self.assertEqual(len(content['projects']), 8)
+        self.assertEqual(len(content['projects']), 12)
         project = content['projects'][0]
         self.assertEqual(len(project['features']), 10)
         self.assertIn('Full-Stack Laravel Developer', project['contribution'])
@@ -90,6 +90,12 @@ class PagesTests(unittest.TestCase):
             project = next(p for p in content['projects'] if p['slug'] == slug)
             self.assertEqual(len(project['screenshots']), screenshot_count)
             self.assertTrue((ROOT / 'projects' / slug / 'index.html').is_file())
+        concepts = [p for p in content['projects'] if p.get('concept')]
+        self.assertEqual(len(concepts), 4)
+        for project in concepts:
+            page = (ROOT / 'projects' / project['slug'] / 'index.html').read_text(encoding='utf-8')
+            self.assertIn('CONCEPT PROJECT', page)
+            self.assertIn('not presented as commissioned client work', page)
         for slug in ['education-management-saas',
                      'crm-business-management-platform', 'hrms-payroll-system', 'warehouse-management-system']:
             for prefix in ['', 'portfolio/']:
