@@ -148,6 +148,271 @@
         }
       ],
       "published": true
+    },
+    {
+      "slug": "finserv-crm-business-management-platform",
+      "title": "FinServ CRM – Customer & Business Management Platform",
+      "short": "FinServ CRM",
+      "theme": "crm",
+      "icon": "grid",
+      "industry": "Financial services · Customer operations",
+      "categories": [
+        "Laravel",
+        "CRM",
+        "ERP"
+      ],
+      "description": "A connected CRM workspace for customer conversations, follow-ups, tasks, invoicing and day-to-day business activity.",
+      "features": [
+        "Customer and contact management",
+        "Lead and follow-up tracking",
+        "Team chat and email workspace",
+        "Task and to-do management",
+        "Sales and activity dashboard",
+        "Invoice management",
+        "Search and notifications",
+        "CSV invoice exports"
+      ],
+      "problem": "Customer conversations, pending work and billing information can become difficult to follow when they are spread across separate tools. FinServ needed a shared workspace where the team could see activity, manage communication and keep financial follow-ups visible.",
+      "solution": "I developed a CRM and business management interface that brings contacts, email, team communication, tasks and invoices into one application. Dashboard views make activity easier to review, while searchable records and invoice statuses help the team identify the next action.",
+      "contribution": "I worked on the full-stack application experience, connecting the customer, communication, task and invoice workflows and implementing the responsive administration interface.",
+      "impact": "The platform gives the team one operational view of customer activity and billing work. It reduces the need to switch between disconnected records and makes outstanding actions easier to identify.",
+      "related_services": [
+        "crm-development",
+        "erp-development",
+        "admin-panel-development"
+      ],
+      "architecture": "Connected CRM workspace",
+      "technologies": [
+        "Laravel",
+        "PHP",
+        "MySQL",
+        "JavaScript"
+      ],
+      "screenshots": [
+        {
+          "src": "/assets/img/portfolio/crm/ERP1.png",
+          "alt": "FinServ CRM dashboard with activity analytics and returning-customer overview."
+        },
+        {
+          "src": "/assets/img/portfolio/crm/ERP2.png",
+          "alt": "FinServ CRM email workspace for managing customer conversations."
+        },
+        {
+          "src": "/assets/img/portfolio/crm/ERP3.png",
+          "alt": "FinServ CRM invoice list with payment status, search, export and record actions."
+        }
+      ],
+      "published": true
+    },
+    {
+      "slug": "ds-shoppy-ecommerce-rewards-platform",
+      "title": "DS Shoppy – E-commerce & Rewards Platform",
+      "short": "DS Shoppy",
+      "theme": "commerce",
+      "icon": "grid",
+      "industry": "Retail · E-commerce",
+      "categories": [
+        "Laravel",
+        "E-commerce",
+        "Website"
+      ],
+      "description": "An online shopping platform with product discovery, customer accounts, cart and checkout, GST calculations, cashback and referral rewards.",
+      "features": [
+        "Product catalogue and search",
+        "Category-based browsing",
+        "Customer registration and login",
+        "Shopping cart and quantity updates",
+        "Address-based checkout",
+        "GST calculation and order summary",
+        "Cashback and reward offers",
+        "Referral rewards"
+      ],
+      "problem": "DS Shoppy needed an online storefront that could support the complete buying journey while also presenting its daily-order cashback and referral programme clearly to customers.",
+      "solution": "I built a responsive e-commerce experience that connects catalogue browsing, search, customer accounts, cart management and checkout. The checkout captures delivery details and presents tax totals, while dedicated promotional content explains the cashback and referral model.",
+      "contribution": "I developed the storefront and purchase flow, including product discovery, account access, cart interactions, checkout details, GST calculation and the rewards-focused customer experience.",
+      "impact": "Customers can move from finding a product to reviewing tax and delivery information in one guided journey. The same platform also gives DS Shoppy a clear place to communicate its rewards programme.",
+      "related_services": [
+        "custom-web-application-development",
+        "api-development-integration",
+        "admin-panel-development"
+      ],
+      "architecture": "Storefront + checkout + rewards",
+      "technologies": [
+        "Laravel",
+        "PHP",
+        "MySQL",
+        "JavaScript"
+      ],
+      "screenshots": [
+        {
+          "src": "/assets/img/portfolio/dsshoppy/D1.png",
+          "alt": "DS Shoppy storefront introducing its cashback and referral rewards."
+        },
+        {
+          "src": "/assets/img/portfolio/dsshoppy/D2.png",
+          "alt": "DS Shoppy shopping cart with quantity controls and order total."
+        },
+        {
+          "src": "/assets/img/portfolio/dsshoppy/D3.png",
+          "alt": "DS Shoppy checkout with delivery details and GST summary."
+        }
+      ],
+      "published": true
+    },
+    {
+      "slug": "electronics-ecommerce-storefront",
+      "title": "Electronics Store – Product Discovery E-commerce Website",
+      "short": "Electronics Store",
+      "theme": "commerce",
+      "icon": "grid",
+      "industry": "Consumer electronics · E-commerce",
+      "categories": [
+        "E-commerce",
+        "Website"
+      ],
+      "description": "A catalogue-led electronics storefront with promotional collections, category browsing, product filters and customer enquiries.",
+      "features": [
+        "Promotional product collections",
+        "Category navigation",
+        "Product catalogue grid",
+        "Stock and sale filters",
+        "Brand-based browsing",
+        "Product ratings and pricing",
+        "Customer contact form",
+        "Responsive storefront layout"
+      ],
+      "problem": "A broad electronics catalogue needs a clear way for shoppers to move from featured promotions into focused product browsing without losing access to categories, brands and availability filters.",
+      "solution": "I built a retail storefront that combines campaign-led landing content with a filterable shop grid. Product status, category and brand options help visitors narrow the catalogue, while contact and account areas support the wider customer journey.",
+      "contribution": "I implemented the responsive storefront pages, catalogue navigation, filtering experience, promotional layouts and customer contact interface.",
+      "impact": "The website gives shoppers a structured way to explore a large catalogue and gives the retailer reusable spaces for promotions, categories and customer enquiries.",
+      "related_services": [
+        "custom-web-application-development",
+        "admin-panel-development"
+      ],
+      "architecture": "Catalogue-led storefront",
+      "technologies": [
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "Bootstrap"
+      ],
+      "screenshots": [
+        {
+          "src": "/assets/img/portfolio/e-commerce/E1.png",
+          "alt": "Electronics storefront hero highlighting a featured smartwatch collection."
+        },
+        {
+          "src": "/assets/img/portfolio/e-commerce/E2.png",
+          "alt": "Electronics catalogue with product status, category and brand filters."
+        },
+        {
+          "src": "/assets/img/portfolio/e-commerce/E3.png",
+          "alt": "Electronics storefront customer contact page."
+        }
+      ],
+      "published": true
+    },
+    {
+      "slug": "kakubaa-student-support-website",
+      "title": "Kakubaa – Student Support & Guidance Website",
+      "short": "Kakubaa",
+      "theme": "education",
+      "icon": "layers",
+      "industry": "Education · Student support",
+      "categories": [
+        "Education",
+        "Website"
+      ],
+      "description": "A responsive education website presenting academic guidance, student support services and consultation plans in one clear experience.",
+      "features": [
+        "Student-focused landing page",
+        "Academic support services",
+        "Service and plan presentation",
+        "About and team pages",
+        "Blog content area",
+        "Contact enquiries",
+        "WhatsApp contact access",
+        "Responsive navigation"
+      ],
+      "problem": "Kakubaa needed a welcoming public website that could explain its student guidance offering, present available plans and make it easy for students to start a conversation.",
+      "solution": "I created a bright, student-focused website with dedicated areas for services, plans, educational content, the team and contact options. Clear navigation and persistent WhatsApp access keep support within reach throughout the site.",
+      "contribution": "I developed the complete responsive website experience, including the service presentation, content structure, contact journey and mobile-friendly interface.",
+      "impact": "The site gives students and families a single place to understand Kakubaa’s offering, compare support options and make an enquiry using the channel that suits them.",
+      "related_services": [
+        "custom-web-application-development"
+      ],
+      "architecture": "Content-led service website",
+      "technologies": [
+        "PHP",
+        "JavaScript",
+        "Bootstrap"
+      ],
+      "screenshots": [
+        {
+          "src": "/assets/img/portfolio/kakubaa/K1.png",
+          "alt": "Kakubaa homepage introducing its student guidance and support services."
+        },
+        {
+          "src": "/assets/img/portfolio/kakubaa/K2.png",
+          "alt": "Kakubaa service information page for students and families."
+        },
+        {
+          "src": "/assets/img/portfolio/kakubaa/K3.png",
+          "alt": "Kakubaa contact and consultation experience."
+        }
+      ],
+      "published": true
+    },
+    {
+      "slug": "sterile-aircare-solutions-corporate-website",
+      "title": "Sterile Aircare Solutions – Corporate Product Website",
+      "short": "Sterile Aircare",
+      "theme": "industrial",
+      "icon": "shield",
+      "industry": "Pharmaceutical & cleanroom engineering",
+      "categories": [
+        "Healthcare",
+        "Website"
+      ],
+      "description": "A corporate product website for cleanroom, pharmaceutical and controlled-environment engineering solutions.",
+      "features": [
+        "Corporate landing page",
+        "Company and expertise overview",
+        "Product catalogue",
+        "Industry-focused service content",
+        "Team presentation",
+        "Brochure access",
+        "Consultation calls to action",
+        "Contact enquiry flow"
+      ],
+      "problem": "Sterile Aircare Solutions needed a professional digital presence that could explain its technical expertise, showcase products and help pharmaceutical, biotech and healthcare buyers start a consultation.",
+      "solution": "I developed a product-focused corporate website that leads with the company’s controlled-environment expertise and connects visitors to detailed company, product, team and contact information. Prominent brochure and consultation actions support practical buyer next steps.",
+      "contribution": "I developed the responsive company website and structured its product, expertise and enquiry content into a clear business-to-business journey.",
+      "impact": "The website gives prospective customers a focused way to understand the company’s capabilities, explore its solutions and move toward a product or consultation enquiry.",
+      "related_services": [
+        "custom-web-application-development"
+      ],
+      "architecture": "Corporate website + product catalogue",
+      "technologies": [
+        "PHP",
+        "JavaScript",
+        "Bootstrap"
+      ],
+      "screenshots": [
+        {
+          "src": "/assets/img/portfolio/sterileair/S1.png",
+          "alt": "Sterile Aircare Solutions homepage presenting controlled-environment engineering expertise."
+        },
+        {
+          "src": "/assets/img/portfolio/sterileair/S2.png",
+          "alt": "Sterile Aircare Solutions product and capability presentation."
+        },
+        {
+          "src": "/assets/img/portfolio/sterileair/S3.png",
+          "alt": "Sterile Aircare Solutions contact and consultation page."
+        }
+      ],
+      "published": true
     }
   ],
   "services": [
@@ -725,6 +990,26 @@
     {
       "slug": "website",
       "title": "Website",
+      "published": true
+    },
+    {
+      "slug": "crm",
+      "title": "CRM",
+      "published": true
+    },
+    {
+      "slug": "erp",
+      "title": "ERP",
+      "published": true
+    },
+    {
+      "slug": "e-commerce",
+      "title": "E-commerce",
+      "published": true
+    },
+    {
+      "slug": "education",
+      "title": "Education",
       "published": true
     }
   ],
