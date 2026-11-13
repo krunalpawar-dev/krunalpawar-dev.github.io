@@ -31,6 +31,9 @@
       const years = Math.max(0, year - Number(element.dataset.experienceSince));
       const duration = `${years} ${years === 1 ? 'year' : 'years'}`;
       element.textContent = element.dataset.experienceFormat === 'count' ? `~${years}`
+        : element.dataset.experienceFormat === 'plus-count' ? `${years}+`
+        : element.dataset.experienceFormat === 'plus-duration' ? `${years}+ years of professional experience`
+        : element.dataset.experienceFormat === 'plus' ? `${years}+ years of professional development experience.`
         : element.dataset.experienceFormat === 'duration' ? `around ${duration} of professional experience`
         : `Around ${duration} of professional development experience.`;
     });

@@ -24,8 +24,8 @@ FORM = 'https://formspree.io/f/xdkeodjk'  # Same endpoint as the original live p
 
 def build():
     data = json.loads((ROOT / 'app/content.json').read_text(encoding='utf-8'))
-    routes = ['/', '/about', '/services', '/projects', '/technologies', '/blog', '/contact', '/privacy']
-    for collection, prefix in [('projects', 'projects'), ('services', 'services'), ('posts', 'blog')]:
+    routes = ['/', '/about', '/services', '/projects', '/technologies', '/contact', '/privacy']
+    for collection, prefix in [('projects', 'projects'), ('services', 'services')]:
         routes += [f'/{prefix}/{row["slug"]}' for row in data[collection] if row.get('published', True)]
     php = subprocess.check_output([shutil.which('php'), '-r', 'echo PHP_BINARY;'], text=True).strip()
     with tempfile.TemporaryDirectory(prefix='portfolio-pages-build-') as temporary:

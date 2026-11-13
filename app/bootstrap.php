@@ -28,11 +28,18 @@ function records(string $collection, bool $all = false): array {
 function record(string $collection, string $slug): ?array { foreach (records($collection) as $r) if ($r['slug'] === $slug) return $r; return null; }
 function projects_by_weight(): array {
     $projects=records('projects');
-    usort($projects,fn($a,$b)=>(int)($b['weight']??0)<=>(int)($a['weight']??0) ?: strcasecmp($a['title'],$b['title']));
+    usort($projects,function(array $a,array $b): int {
+        $byWeight=(int)($b['weight']??0)<=>(int)($a['weight']??0);
+        if($byWeight!==0)return $byWeight;
+        $byProjectType=(int)!empty($a['concept'])<=>(int)!empty($b['concept']);
+        if($byProjectType!==0)return $byProjectType;
+        $byTitle=strcasecmp((string)($a['title']??''),(string)($b['title']??''));
+        return $byTitle!==0?$byTitle:strcmp((string)($a['slug']??''),(string)($b['slug']??''));
+    });
     return $projects;
 }
 function icon(string $name, string $class = ''): string {
-    $paths = ['arrow'=>'<path d="M5 12h14m-6-6 6 6-6 6"/>','diagonal'=>'<path d="M6 18 18 6M6 6h12v12"/>','code'=>'<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/>','layers'=>'<path d="m12 3 10 5-10 5L2 8Zm-10 9 10 5 10-5M2 16l10 5 10-5"/>','grid'=>'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>','link'=>'<path d="m10 13 4-4m-6 7-2 2a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m4 8 4-4a4 4 0 0 0-6-6l-2 2" transform="translate(2 0)"/>','check'=>'<path d="m5 12 4 4L19 6"/>','globe'=>'<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>','mail'=>'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>','menu'=>'<path d="M4 7h16M4 12h16M4 17h16"/>','shield'=>'<path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z"/><path d="m8 12 3 3 5-5"/>','terminal'=>'<path d="m5 7 5 5-5 5m8 0h6"/>','clock'=>'<circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/>'];
+    $paths = ['arrow'=>'<path d="M5 12h14m-6-6 6 6-6 6"/>','diagonal'=>'<path d="M6 18 18 6M6 6h12v12"/>','code'=>'<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/>','layers'=>'<path d="m12 3 10 5-10 5L2 8Zm-10 9 10 5 10-5M2 16l10 5 10-5"/>','grid'=>'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>','link'=>'<path d="m10 13 4-4m-6 7-2 2a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m4 8 4-4a4 4 0 0 0-6-6l-2 2" transform="translate(2 0)"/>','check'=>'<path d="m5 12 4 4L19 6"/>','globe'=>'<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>','mail'=>'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>','menu'=>'<path d="M4 7h16M4 12h16M4 17h16"/>','shield'=>'<path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z"/><path d="m8 12 3 3 5-5"/>','terminal'=>'<path d="m5 7 5 5-5 5m8 0h6"/>','clock'=>'<circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/>','cloud'=>'<path d="M7 18h11a4 4 0 0 0 .5-7.97A7 7 0 0 0 5.1 8.6 4.5 4.5 0 0 0 7 18Z"/>','queue'=>'<path d="M4 6h12m-4-3 4 3-4 3M20 18H8m4 3-4-3 4-3"/>'];
     return '<svg class="icon '.e($class).'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'.($paths[$name] ?? $paths['code']).'</svg>';
 }
 function start_session(): void {

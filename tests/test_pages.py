@@ -30,7 +30,7 @@ class PagesTests(unittest.TestCase):
     def test_all_public_pages_and_links(self):
         sitemap = ET.parse(ROOT / 'sitemap.xml')
         urls = [el.text for el in sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-        self.assertEqual(len(urls), 38)
+        self.assertEqual(len(urls), 31)
         for url in urls:
             with self.subTest(url=url):
                 self.assertTrue(url.startswith(ORIGIN + BASE + '/'))

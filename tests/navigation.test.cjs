@@ -38,19 +38,19 @@ async function fixture(t, pathname = '/') {
   return {w, requests, errors, click, loaded, answer};
 }
 
-test('experience updates each year and after page navigation', async t => {
+test('5+ experience updates each year and after page navigation', async t => {
   const f = await fixture(t);
   const NativeDate = f.w.Date;
   let now = '2026-12-31T18:29:00Z';
   f.w.Date = class extends NativeDate { constructor(...args) { super(...(args.length ? args : [now])); } };
   f.w.dispatchEvent(new f.w.Event('pageshow'));
-  assert.match(f.w.document.querySelector('.hero-proof [data-experience-since]').textContent, /Around 4 years/);
+  assert.match(f.w.document.querySelector('.hero-proof [data-experience-since]').textContent, /5\+ years/);
   now = '2026-12-31T18:30:00Z';
   f.w.document.dispatchEvent(new f.w.Event('visibilitychange'));
-  assert.match(f.w.document.querySelector('.hero-proof [data-experience-since]').textContent, /Around 5 years/);
-  assert.equal(f.w.document.querySelector('[data-experience-format="count"]').textContent, '~5');
+  assert.match(f.w.document.querySelector('.hero-proof [data-experience-since]').textContent, /6\+ years/);
+  assert.equal(f.w.document.querySelector('[data-experience-format="plus-count"]').textContent, '6+');
   const ready = f.loaded(); f.click('#main-nav a[href="/about/"]'); await ready;
-  assert.match(f.w.document.querySelector('[data-experience-since]').textContent, /around 5 years/);
+  assert.match(f.w.document.querySelector('[data-experience-since]').textContent, /6\+ years/);
 });
 
 test('internal navigation keeps the document and updates content, SEO, focus and active links', async t => {

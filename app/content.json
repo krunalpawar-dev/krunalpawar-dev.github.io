@@ -1042,6 +1042,13 @@
       "published": true
     },
     {
+      "slug": "nodejs",
+      "title": "Node.js",
+      "group": "Backend",
+      "description": "JavaScript runtimes for API services, real-time features, automation scripts and modern development tooling.",
+      "published": true
+    },
+    {
       "slug": "vuejs",
       "title": "Vue.js",
       "group": "Frontend",
@@ -1137,6 +1144,20 @@
       "title": "Git",
       "group": "Infrastructure",
       "description": "Version control for traceable changes and collaborative development.",
+      "published": true
+    },
+    {
+      "slug": "openai-codex",
+      "title": "OpenAI Codex",
+      "group": "AI-Assisted Development",
+      "description": "An AI coding collaborator for exploring codebases, implementing scoped changes, running checks and accelerating repetitive development work.",
+      "published": true
+    },
+    {
+      "slug": "claude",
+      "title": "Claude",
+      "group": "AI-Assisted Development",
+      "description": "An AI assistant used to reason through requirements, compare implementation approaches and support technical review and documentation.",
       "published": true
     }
   ],

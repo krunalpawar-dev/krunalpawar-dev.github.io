@@ -25,7 +25,13 @@ The public contact form uses the original website's Formspree endpoint. Email an
 php -S 127.0.0.1:8085 router.php
 ```
 
-Open `http://127.0.0.1:8085`. Herd can serve the site at `http://portfolio.test`; the PHP router above is the reference development server. Root-relative links require hosting at the domain root, not a GitHub Pages subdirectory.
+Or use the package script (Node dependencies are not required for serving):
+
+```powershell
+npm run dev
+```
+
+Open `http://127.0.0.1:8085`. Herd derives the local URL from the checkout directory name; run `herd parked` to see the URL for this checkout. If multiple copies of the repository exist under a parked directory, make sure the URL you open points to the copy you are editing. The PHP router above is the reference development server. Root-relative links require hosting at the domain root, not a GitHub Pages subdirectory.
 
 ## Private storage and configuration
 

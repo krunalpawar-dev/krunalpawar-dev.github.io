@@ -27,6 +27,14 @@ body.page-loading:before{content:'';position:fixed;z-index:100;top:0;left:0;heig
 
 .hero-proof .mini-portrait img { filter: none; }
 
+/* Stronger personal proof card in the homepage hero. */
+.home-hero .hero-proof{width:min(100%,610px);display:grid;grid-template-columns:auto 1fr;align-items:center;gap:17px;margin-top:28px;padding:14px 18px 14px 14px;border:1px solid #ffffff30;border-radius:16px;background:linear-gradient(135deg,#ffffff1d,#ffffff0d);box-shadow:0 18px 45px #070b202e;backdrop-filter:blur(12px)}
+.home-hero .mini-portrait{position:relative;display:grid;place-items:center;width:68px;height:68px;border-radius:50%;background:linear-gradient(145deg,#8195ff,#f29b7e);padding:2px;box-shadow:0 8px 24px #05091f4d}
+.home-hero .mini-portrait:after{content:'';position:absolute;right:1px;bottom:4px;width:13px;height:13px;border:3px solid #1a2046;border-radius:50%;background:#4bc690}
+.home-hero .mini-portrait img{display:block;width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid #11162f}
+.home-hero .hero-proof-copy{min-width:0}.home-hero .hero-proof-label{display:block;margin-bottom:3px;color:#aebcff;font-size:.61rem;font-weight:700;letter-spacing:.14em}.home-hero .hero-proof-copy strong{display:block;font-size:.86rem;line-height:1.45}.home-hero .hero-experience{display:block;margin-top:3px;color:#d6dced;font-size:.76rem}.home-hero .hero-experience::first-letter{font-weight:700}
+@media(max-width:680px){.home-hero .hero-proof{grid-template-columns:auto 1fr;padding:13px;gap:13px;border-radius:14px}.home-hero .mini-portrait{width:58px;height:58px}.home-hero .mini-portrait img{width:54px;height:54px}.home-hero .hero-proof-label{font-size:.56rem}.home-hero .hero-proof-copy strong{font-size:.76rem}.home-hero .hero-experience{font-size:.7rem}}
+
 /* Compact header, with the mobile menu aligned to its lower edge. */
 .about-profile { grid-template-columns: .9fr 1.1fr; gap: clamp(36px, 5vw, 72px); }
 .about-profile .prose h2 { font-size: clamp(1.7rem, 2.5vw, 2.3rem); }

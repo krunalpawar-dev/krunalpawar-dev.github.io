@@ -105,8 +105,8 @@ class SiteTests(unittest.TestCase):
         return {'csrf': token, 'name': 'Integration Test', 'company': 'Test company', 'email': 'nobody@example.test', 'phone': '+919000000001', 'project_type': 'CRM', 'budget': 'Let’s discuss', 'description': 'A test CRM enquiry used only by the isolated integration suite.', 'contact_method': 'Email', 'consent': 'yes', 'website': ''}
 
     def test_public_routes_metadata_links_and_sitemap(self):
-        routes = ['/', '/about', '/services', '/projects', '/technologies', '/blog', '/contact', '/privacy']
-        for collection, prefix in [('projects','projects'), ('services','services'), ('posts','blog')]:
+        routes = ['/', '/about', '/services', '/projects', '/technologies', '/contact', '/privacy']
+        for collection, prefix in [('projects','projects'), ('services','services')]:
             routes += [f'/{prefix}/{item["slug"]}' for item in self.seed[collection]]
         titles, descriptions, links = set(), set(), set()
         for route in routes:
@@ -125,9 +125,6 @@ class SiteTests(unittest.TestCase):
                 schemas = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', html).group(1))
                 types = {s['@type'] for s in schemas}
                 self.assertTrue({'Person', 'WebSite'} <= types)
-                if route.startswith('/blog/'):
-                    self.assertIn('Article', types)
-                    self.assertIn('In this article', html)
                 if route.startswith('/services/'):
                     self.assertIn('Service', types)
                 if route.startswith('/projects/'):
@@ -143,7 +140,7 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(status, 200)
         root = ET.fromstring(xml)
         sitemap_urls = {el.text for el in root.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')}
-        self.assertEqual(len(sitemap_urls), 37)
+        self.assertEqual(len(sitemap_urls), 30)
         self.assertTrue({self.origin + r for r in routes if r != '/privacy'} <= sitemap_urls)
         _, robots, _ = self.request('/robots.txt')
         self.assertIn('Disallow: /admin', robots)
@@ -159,15 +156,19 @@ class SiteTests(unittest.TestCase):
             status, _, _ = self.request(path)
             self.assertEqual(status, 200)
 
-    def test_project_and_blog_filters_without_javascript(self):
+    def test_project_filters_without_javascript(self):
         _, html, _ = self.request('/projects?category=HRMS')
         self.assertIn('2 projects', html)
         self.assertEqual(len(re.findall(r'<article hidden class="project-card"', html)), 10)
-        _, html, _ = self.request('/blog?category=PHP')
-        self.assertIn('No articles in this category yet', html)
-        self.assertIn('aria-pressed="true">PHP', html)
         _, html, _ = self.request('/contact?service=crm-development')
         self.assertIn('<option value="CRM" selected>Customers, sales &amp; follow-ups</option>', html)
+
+    def test_blog_routes_are_not_public(self):
+        for path in ['/blog', '/blog/' + self.seed['posts'][0]['slug']]:
+            with self.subTest(path=path):
+                status, html, _ = self.request(path)
+                self.assertEqual(status, 404)
+                self.assertIn('noindex', html)
 
     def test_enquiry_with_only_name_and_phone(self):
         _, html, _ = self.request('/contact')
@@ -234,14 +235,11 @@ class SiteTests(unittest.TestCase):
         _, html, _ = self.request(route)
         fields.update(csrf=self.csrf(html), published='on')
         self.request(route, fields)
-        status, html, _ = self.request('/blog/integration-test-article')
-        self.assertEqual(status, 200)
-        self.assertIn('Unique test SEO title', html)
-        self.assertIn('&lt;script&gt;alert(1)&lt;/script&gt;', html)
-        self.assertIn('integration-test-article', self.request('/sitemap.xml')[1])
+        self.assertEqual(self.request('/blog/integration-test-article')[0], 404)
+        self.assertNotIn('integration-test-article', self.request('/sitemap.xml')[1])
         fields['title'] = 'An updated test article'
-        self.request(route, fields)
-        self.assertIn('An updated test article', self.request('/blog/integration-test-article')[1])
+        _, html, _ = self.request(route, fields)
+        self.assertIn('An updated test article', html)
         self.request('/admin?collection=posts', {'csrf': fields['csrf'], 'action': 'delete', 'slug': fields['slug']})
         self.assertEqual(self.request('/blog/integration-test-article')[0], 404)
 

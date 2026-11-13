@@ -1,6 +1,10 @@
 {
   "name": "krunal-pawar-portfolio",
   "private": true,
-  "scripts": {"test:navigation": "node --test tests/navigation.test.cjs"},
+  "scripts": {
+    "dev": "php -S 127.0.0.1:8085 router.php",
+    "start": "php -S 127.0.0.1:8085 router.php",
+    "test:navigation": "node --test tests/navigation.test.cjs"
+  },
   "devDependencies": {"jsdom": "26.1.0"}
 }
